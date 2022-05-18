@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="cabViewModel"
+            type="com.cabbooking.ui.cab.CabViewModel" />
+
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:fillViewport="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingHorizontal="@dimen/_14sdp"
+            tools:context=".ui.cab.CreateCabActivity">
+
+            <ImageView
+                android:id="@+id/backBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:onClick="@{(v)->cabViewModel.onClick(v)}"
+                android:padding="@dimen/_5sdp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/back_button"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="ContentDescription" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/signUpText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_50sdp"
+                android:alpha="0.8"
+                android:fontFamily="@font/opensans_bold"
+                android:text="@string/add_booking"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:visibility="visible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/backBtn"
+                tools:text="@tools:sample/lorem" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/signUpText2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:alpha="0.8"
+                android:fontFamily="@font/opensans_regular"
+                android:text="@string/fill_all_the_details_in_order_to_add_booking"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:visibility="visible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/signUpText" />
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/cabNumbLayout"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_35sdp"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:focusable="false"
+                android:fontFamily="@font/opensans_regular"
+                android:textColorHint="@color/color_666666"
+                android:visibility="visible"
+                app:hintTextColor="@color/color_666666"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/signUpText2">
+
+                <EditText
+                    android:id="@+id/cabNumb"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/transparent"
+                    android:fontFamily="@font/opensans_regular"
+                    android:hint="@string/cab_number"
+                    android:imeOptions="actionNext"
+                    android:inputType="textCapSentences"
+                    android:singleLine="true"
+                    android:text="@={cabViewModel.cabNumb}"
+                    android:textCursorDrawable="@null"
+                    android:textSize="14sp"
+                    tools:ignore="Autofill" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <View
+                android:id="@+id/viewCabNumb"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:alpha="0.2"
+                android:background="@color/black"
+                app:layout_constraintTop_toBottomOf="@id/cabNumbLayout" />
+
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/uploadRcText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_30sdp"
+                android:alpha="0.5"
+                android:fontFamily="@font/opensans_regular"
+                android:text="@string/upload_rc_photo"
+                android:textColor="@color/black"
+                android:textSize="13sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/viewCabNumb" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/uploadImgButton"
+                android:layout_width="90dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:layout_marginLeft="@dimen/_20sdp"
+                android:background="@drawable/bg_button_rounded_blue"
+                android:elevation="1dp"
+                android:fontFamily="@font/opensans_semi_bold"
+                android:gravity="center"
+                android:onClick="@{(v)->cabViewModel.onClick(v)}"
+                android:text="@string/upload"
+                android:textColor="@color/white"
+                android:textSize="13sp"
+                app:layout_constraintBottom_toBottomOf="@id/uploadRcText"
+                app:layout_constraintStart_toEndOf="@id/uploadRcText"
+                app:layout_constraintTop_toTopOf="@id/uploadRcText"
+                tools:targetApi="lollipop" />
+
+            <ImageView
+                android:id="@+id/uploadRcImg"
+                android:layout_width="@dimen/_130sdp"
+                android:layout_height="@dimen/_130sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:elevation="@dimen/_2sdp"
+                android:scaleType="fitXY"
+                android:src="@drawable/placeholder"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/uploadRcText"
+                tools:ignore="ContentDescription" />
+
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/uploadCabFrontText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_30sdp"
+                android:alpha="0.5"
+                android:fontFamily="@font/opensans_regular"
+                android:text="@string/upload_cab_front_pic"
+                android:textColor="@color/black"
+                android:textSize="13sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/uploadRcImg" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/uploadCabFrontButton"
+                android:layout_width="90dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:layout_marginLeft="@dimen/_20sdp"
+                android:background="@drawable/bg_button_rounded_blue"
+                android:elevation="1dp"
+                android:fontFamily="@font/opensans_semi_bold"
+                android:gravity="center"
+                android:onClick="@{(v)->cabViewModel.onClick(v)}"
+                android:text="@string/upload"
+                android:textColor="@color/white"
+                android:textSize="13sp"
+                app:layout_constraintBottom_toBottomOf="@id/uploadCabFrontText"
+                app:layout_constraintStart_toEndOf="@id/uploadCabFrontText"
+                app:layout_constraintTop_toTopOf="@id/uploadCabFrontText"
+                tools:targetApi="lollipop" />
+
+
+            <ImageView
+                android:id="@+id/uploadCabFrontImg"
+                android:layout_width="@dimen/_130sdp"
+                android:layout_height="@dimen/_130sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:elevation="@dimen/_2sdp"
+                android:scaleType="fitXY"
+                android:src="@drawable/placeholder"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/uploadCabFrontText"
+                tools:ignore="ContentDescription" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/uploadCabSideText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_30sdp"
+                android:alpha="0.5"
+                android:fontFamily="@font/opensans_regular"
+                android:text="@string/upload_cab_side_pic"
+                android:textColor="@color/black"
+                android:textSize="13sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/uploadCabFrontImg" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/uploadCabSideButton"
+                android:layout_width="90dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:layout_marginLeft="@dimen/_20sdp"
+                android:background="@drawable/bg_button_rounded_blue"
+                android:elevation="1dp"
+                android:fontFamily="@font/opensans_semi_bold"
+                android:gravity="center"
+                android:onClick="@{(v)->cabViewModel.onClick(v)}"
+                android:text="@string/upload"
+                android:textColor="@color/white"
+                android:textSize="13sp"
+                app:layout_constraintBottom_toBottomOf="@id/uploadCabSideText"
+                app:layout_constraintStart_toEndOf="@id/uploadCabSideText"
+                app:layout_constraintTop_toTopOf="@id/uploadCabSideText"
+                tools:targetApi="lollipop" />
+
+
+            <ImageView
+                android:id="@+id/uploadCabSideImg"
+                android:layout_width="@dimen/_130sdp"
+                android:layout_height="@dimen/_130sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:layout_marginBottom="@dimen/_14sdp"
+                android:elevation="@dimen/_2sdp"
+                android:scaleType="fitXY"
+                android:src="@drawable/placeholder"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/uploadCabSideText"
+                tools:ignore="ContentDescription" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</layout>

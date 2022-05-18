@@ -1,0 +1,200 @@
+<resources>
+    <string name="app_name">Cab Booking</string>
+
+    <string-array name="filterList">
+        <item>Confirm</item>
+        <item>Pending</item>
+        <item>Not Confirm</item>
+    </string-array>
+
+    <string-array name="bookingTypeList">
+        <item>One Way</item>
+        <item>Round Trip</item>
+        <item>Rental</item>
+        <item>Sharing</item>
+    </string-array>
+
+    <string-array name="cabTypeList">
+        <item>Sedan</item>
+        <item>Coupe</item>
+        <item>Sports Car</item>
+        <item>HatchBACK</item>
+        <item>SUV</item>
+    </string-array>
+    <string-array name="numberOfPassList">
+        <item>1 – 4</item>
+        <item>5 – 10</item>
+        <item>10 – 15</item>
+        <item>15 – 20</item>
+        <item>20+</item>
+    </string-array>
+    <string-array name="statusList">
+        <item>Active</item>
+        <item>Not Active</item>
+    </string-array>
+
+    <!--Error Messages-->
+    <string name="error_internet">Please check your internet connection</string>
+    <string name="something_went_wrong">Something went wrong</string>
+    <string name="error_back_press">Please press back again to Exit</string>
+
+
+    <string name="welcome_to_cab_booking">Welcome to Cab Booking</string>
+    <string name="next">Next</string>
+    <string name="enter_phone_number_lined_to_your_registered_account">Enter mobile number linked to your registered account</string>
+    <string name="enter_mobile_number">Enter Mobile Number</string>
+    <string name="otp_verification">OTP Verification</string>
+    <string name="enter_4_digit_verification_code_otp_sent_on_your_registered_mobile_number">Enter 4 Digit verification Code (OTP) Sent On Your Mobile Number.</string>
+    <string name="send_again">Send Again</string>
+    <string name="did_not_receive_otp">Didn\'t Receive OTP?</string>
+    <string name="done">Done</string>
+    <string name="don_t_have_an_account">Don\'t have an account ?</string>
+    <string name="enter_full_name">Enter Full name</string>
+    <string name="enter_company_name">Enter Company Name</string>
+    <string name="enter_working_location">Enter Working Location</string>
+    <string name="enter_pincode">Enter Pin-Code</string>
+    <string name="create_account">Create Account</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="create_account_for_vender">Create Account For Vender</string>
+    <string name="create_account_for_driver">Create Account For Driver</string>
+    <string name="fill_all_the_details_in_order_to_create_account">Fill all the details, in order to create account.</string>
+    <string name="fill_all_the_details_in_order_to_add_booking">Fill all the details, in order to add booking.</string>
+    <string name="select_user_type">Select User Type</string>
+    <string name="i_am_vender">I am Vender</string>
+    <string name="i_am_driver">I am Driver</string>
+    <string name="continue_">Continue</string>
+    <string name="_91">+91</string>
+    <string name="enter_phone_number">Enter Phone Number</string>
+    <string name="enter_email_id">Enter email Id</string>
+    <string name="upload">Upload</string>
+    <string name="upload_licence">Upload Licence Photo</string>
+    <string name="upload_driver_licence">Upload Driver\'s Licence Photo</string>
+    <string name="upload_adhar">Upload Adhar Card\'s Front Side Photo</string>
+    <string name="upload_adhar_back_side">Upload Adhar Card\'s Back Side Photo</string>
+    <string name="enter_whatsapp_number">Enter WhatsApp Number</string>
+    <string name="enter_licence_number">Enter Licence Number</string>
+    <string name="enter_adhar_number">Enter Adhar Card Number</string>
+    <string name="enter_gst_number">Enter GST number</string>
+    <string name="select_state">Select State</string>
+    <string name="select_city">Select City</string>
+    <string name="select_district">Select District</string>
+
+    <string name="title_activity_home_vender">MainActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_booking">Booking</string>
+    <string name="title_cab">Cab</string>
+    <string name="title_driver">Driver</string>
+    <string name="title_route">Route</string>
+    <string name="title_more">More</string>
+    <string name="title_logout">Logout</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="feedback">Feedback</string>
+    <string name="profile">Profile</string>
+    <string name="support">Support</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="select_starting_date">Select Starting Date</string>
+    <string name="select_end_date">Select End Date</string>
+    <string name="select_state_for_pickup_and_drop">Select state for pickup and drop</string>
+    <string name="add_booking">Add Booking</string>
+    <string name="pick_up">Pick up</string>
+    <string name="drop">Drop</string>
+    <string name="booking_type">Booking Type</string>
+    <string name="cab_type">Cab Type</string>
+    <string name="number_of_passenger">Number of passenger</string>
+    <string name="status">Status</string>
+    <string name="rate">Rate</string>
+    <string name="advance">Advance</string>
+    <string name="please_write_comment_here">Please write comment here...</string>
+    <string name="cab_number">Cab number*</string>
+    <string name="upload_rc_photo">Upload RC photo*</string>
+    <string name="upload_cab_front_pic">Upload Cab Front Pic*</string>
+    <string name="upload_cab_side_pic">Upload Cab Side Pic*</string>
+    <string name="welcome_to_faastr">Welcome to FAASTR</string>
+    <string name="hello_i_guess_you_are_new_around_here_you_can_start_using_the_application_after_sign_up">Hello, I guess you are new around here. You can start using the application after sign up.</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="enter_name">Enter Name</string>
+    <string name="company_name">Company Name</string>
+    <string name="upload_your_driving_license">Upload your driving license</string>
+    <string name="upload_your_adhar_card">Upload your aadhar card</string>
+    <string name="upload_your_adhar_card_back_side">Upload your aadhar card\'s back side</string>
+    <string name="licence_number">Licence Number (ex- AB01 12345678910)</string>
+    <string name="licence_number_hint">Licence Number</string>
+    <string name="adhar_card_number">Adhar Card Number</string>
+    <string name="log_in">Log In</string>
+    <string name="already_have_an_account">Already have an account?</string>
+    <string name="load_more_data">Load More Data</string>
+    <string name="rupees_symbol">₹</string>
+    <string name="no_booking_found">No Booking found</string>
+    <string name="no_cab_found">No Cab found</string>
+    <string name="rating">Rating</string>
+    <string name="vehicle_name">Vehicle Name</string>
+    <string name="model">Model</string>
+    <string name="vehicle_number">Vehicle Number</string>
+    <string name="driver_name">Driver Name</string>
+    <string name="driver_status">Driver Status</string>
+    <string name="driver_number">Driver Number</string>
+    <string name="filter">Filter</string>
+    <string name="coming_7_days">Coming 7 Days</string>
+    <string name="coming_15_days">Coming 15 Days</string>
+    <string name="coming_30_days">Coming 30 Days</string>
+    <string name="last_7_days">Last 7 Days</string>
+    <string name="last_15_days">Last 15 Days</string>
+    <string name="last_30_days">Last 30 Days</string>
+    <string name="custom">Custom</string>
+    <string name="confirmed">Confirmed</string>
+    <string name="pending">Pending</string>
+    <string name="blacklist">Blacklist</string>
+    <string name="not_confirmed">Not Confirmed</string>
+    <string name="cancel">Cancel</string>
+    <string name="all">All</string>
+    <string name="apply_filter">Apply Filter</string>
+    <string name="clear_filter">Clear Filter</string>
+    <string name="create_booking">Create Booking</string>
+    <string name="enquiry_date">Enquiry Date</string>
+    <string name="enter_rate">Enter Rate</string>
+    <string name="enter_pending_rate">Enter Pending Rate</string>
+    <string name="enter_advance_rate">Enter Advance Rate</string>
+    <string name="select_driver">Select Driver</string>
+    <string name="select_cab">Select Cab</string>
+    <string name="create_driver">Create Driver</string>
+    <string name="active">Active</string>
+    <string name="select_driver_status">Select Driver status</string>
+    <string name="select_cab_status">Select Cab status</string>
+    <string name="un_active">UnActive</string>
+    <string name="un_approved">UnApproved</string>
+    <string name="approved">Approved</string>
+    <string name="create_cab">Create Cab</string>
+    <string name="manufacture">Manufacture</string>
+    <string name="enter_registration_number">Enter Registration Number</string>
+    <string name="upload_cab_docs">Upload Cab Docs</string>
+    <string name="yes">Yes</string>
+    <string name="are_you_sure_want_to_logout">Are you sure want to Logout ?</string>
+    <string name="more">More :</string>
+    <string name="setting">Setting</string>
+    <string name="no_driver_found">No Driver Found</string>
+    <string name="money">Money</string>
+    <string name="update">Update</string>
+    <string name="balance">Balance</string>
+    <string name="payment">Payment</string>
+    <string name="bank_details">Bank Details</string>
+    <string name="legal">Legal</string>
+    <string name="about">About</string>
+    <string name="help">Help</string>
+    <string name="terms_conditions"><![CDATA[Terms & Conditions]]></string>
+    <string name="data">Data</string>
+    <string name="ratings">Ratings</string>
+    <string name="vehicle_status">Vehicle Status</string>
+    <string name="vehicle_request">Vehicle Request</string>
+    <string name="select_vehicle">Select Vehicle</string>
+    <string name="upload_driver_image">Upload Driver Image</string>
+    <string name="seating_capacity">Seating Capacity</string>
+    <string name="ok">Ok</string>
+    <string name="email_id">Email-ID</string>
+    <string name="enter_pickup_location">Enter PickUp Location</string>
+    <string name="enter_drop_location">Enter Drop Location</string>
+    <string name="no_place_found">No Place found</string>
+
+
+</resources>

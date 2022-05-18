@@ -1,0 +1,17 @@
+package com.cabbooking.constant
+
+//Keys
+const val EXTRA_DATA = "EXTRA_DATA"
+const val EXTRA_VALUE = "EXTRA_VALUE"
+const val EXTRA_VALUE_SECOND = "EXTRA_VALUE_SECOND"
+const val EXTRA_DATA_TWO = "EXTRA_DATA_TWO"
+const val EXTRA_ID = "EXTRA_ID"
+const val EXTRA_NAME = "EXTRA_NAME"
+const val EXTRA_LIST = "EXTRA_LIST"
+const val EXTRA_FLAG = "EXTRA_FLAG"
+
+
+const val EXTRA_GENDER = "EXTRA_GENDER"
+const val EXTRA_INTERESTED = "EXTRA_INTERESTED"
+const val EXTRA_UNIVERSITY = "EXTRA_UNIVERSITY"
+

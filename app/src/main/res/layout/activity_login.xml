@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="loginViewModelBinding"
+            type="com.cabbooking.ui.login.LoginViewModel" />
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        tools:context=".ui.login.LoginActivity">
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/loginRoot"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_0dp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:fillViewport="true"
+            app:layout_constraintBottom_toTopOf="@id/bottomCL"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/toolbarCl"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_162sdp"
+                    android:background="@drawable/gradient_f9c22d_d39200"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/ic_faastr_logo_svg">
+
+                    </androidx.appcompat.widget.AppCompatImageView>
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_20sdp"
+                    android:background="@drawable/bg_white_rounded_bottom_sheet"
+                    app:layout_constraintBottom_toTopOf="@id/dummyCl" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/dummyCl"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="@dimen/_20sdp"
+                    app:layout_constraintTop_toBottomOf="@id/toolbarCl">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/headingText"
+                        style="@style/Text_semiBold_20sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_4sdp"
+                        android:text="@string/welcome_to_faastr"
+                        android:textColor="@color/color_212121"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="@dimen/_28dp"
+                        android:layout_height="@dimen/_28dp"
+                        android:layout_marginStart="@dimen/_5sdp"
+                        android:layout_marginLeft="@dimen/_6sdp"
+                        app:layout_constraintStart_toEndOf="@id/headingText"
+                        app:layout_constraintTop_toTopOf="@id/headingText"
+                        app:srcCompat="@drawable/waving" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/descText"
+                        style="@style/Text_regular_14sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_20sdp"
+                        android:gravity="start"
+                        android:text="@string/hello_i_guess_you_are_new_around_here_you_can_start_using_the_application_after_sign_up"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/color_7f7f7f"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/headingText" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/numbText"
+                        style="@style/Text_regular_14sp"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_35sdp"
+                        android:gravity="start"
+                        android:text="@string/phone_number"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/color_7f7f7f"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/descText" />
+
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/contactCL"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/_50sdp"
+                        android:layout_marginTop="@dimen/_14sdp"
+                        android:background="@drawable/bg_rectangular_f2f2f2"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/numbText">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/indFlag"
+                            android:layout_width="@dimen/_28sdp"
+                            android:layout_height="@dimen/_28sdp"
+                            android:layout_marginStart="@dimen/_10sdp"
+                            android:layout_marginLeft="@dimen/_10sdp"
+                            android:layout_marginTop="@dimen/_15sdp"
+                            android:layout_marginBottom="@dimen/_15sdp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toStartOf="@id/ccp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:srcCompat="@drawable/flag" />
+
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/ccp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_15sdp"
+                            android:layout_marginBottom="@dimen/_15sdp"
+                            android:fontFamily="@font/opensans_semi_bold"
+                            android:padding="@dimen/_10sdp"
+                            android:text="@string/_91"
+                            android:textColor="@color/color_212121"
+                            android:textSize="@dimen/_14sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toStartOf="@id/view"
+                            app:layout_constraintStart_toEndOf="@+id/indFlag"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <View
+                            android:id="@+id/view"
+                            android:layout_width="1dp"
+                            android:layout_height="0dp"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:layout_marginBottom="@dimen/_10sdp"
+                            android:alpha="0.2"
+                            android:background="@color/black"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toEndOf="@id/ccp"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <androidx.appcompat.widget.AppCompatEditText
+                            android:id="@+id/phoneNumber"
+                            style="@style/EditText_medium_number_14sp"
+                            android:layout_height="0dp"
+                            android:layout_marginStart="@dimen/_5sdp"
+                            android:layout_marginLeft="@dimen/_5sdp"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:layout_marginBottom="@dimen/_10sdp"
+                            android:background="@null"
+                            android:gravity="center_vertical"
+                            android:hint="@string/enter_phone_number"
+                            android:imeOptions="actionDone"
+                            android:text="@={loginViewModelBinding.loginNumber}"
+                            android:textAlignment="gravity"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.0"
+                            app:layout_constraintStart_toEndOf="@id/view"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.538" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/bottomCL"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_0dp"
+            android:paddingHorizontal="@dimen/_20sdp"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/loginBtn"
+                style="@style/ButtonGradientStyle"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:fontFamily="@font/opensans_semi_bold"
+                android:onClick="@{(v)->loginViewModelBinding.onClick(v)}"
+                android:text="@string/next"
+                android:textAllCaps="true"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toTopOf="@id/don_have_account"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/don_have_account"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:layout_marginBottom="@dimen/_20sdp"
+                android:alpha="0.8"
+                android:fontFamily="@font/opensans_semi_bold"
+                android:text="@string/don_t_have_an_account"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:onClick="@{(v)->loginViewModelBinding.onClick(v)}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/createAccountBtn"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/loginBtn" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/createAccountBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_5dp"
+                android:fontFamily="@font/poppins_semibold"
+                android:onClick="@{(v)->loginViewModelBinding.onClick(v)}"
+                android:text="@string/create_account"
+                android:textColor="@color/color_f9c22d"
+                android:textSize="@dimen/_16sp"
+                app:layout_constraintBottom_toBottomOf="@id/don_have_account"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/don_have_account"
+                app:layout_constraintTop_toTopOf="@id/don_have_account"
+                android:layout_marginLeft="@dimen/_5dp" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

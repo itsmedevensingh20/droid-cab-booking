@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_8dp"
+        android:background="@drawable/bg_rectangular_white_4dp"
+        android:elevation="@dimen/_1dp"
+        android:padding="@dimen/_6dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/dateTime"
+            style="@style/Text_regular_14sp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_clock_svg"
+            android:drawableLeft="@drawable/ic_clock_svg"
+            android:drawablePadding="@dimen/_6dp"
+            android:maxLength="25"
+            android:maxLines="1"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Wed, Nov 17 | 10:13 AM" />
+
+        <View
+            android:id="@+id/view1"
+            android:layout_width="@dimen/_1dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/_8dp"
+            android:layout_marginEnd="@dimen/_8dp"
+            android:layout_marginBottom="@dimen/_8dp"
+            android:background="@color/color_f1f1f1"
+            app:layout_constraintBottom_toTopOf="@id/view3"
+            app:layout_constraintEnd_toStartOf="@id/tripType"
+            app:layout_constraintStart_toEndOf="@id/dateTime"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tripType"
+            style="@style/Text_regular_14sp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_distance_small_svg"
+            android:drawableLeft="@drawable/ic_distance_small_svg"
+            android:drawablePadding="@dimen/_2dp"
+            android:maxLength="25"
+            android:maxLines="1"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toStartOf="@id/view2"
+            app:layout_constraintStart_toEndOf="@id/view1"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="One Way" />
+
+        <View
+            android:id="@+id/view2"
+            android:layout_width="@dimen/_1dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/_8dp"
+            android:layout_marginEnd="@dimen/_8dp"
+            android:layout_marginBottom="@dimen/_8dp"
+            android:background="@color/color_f1f1f1"
+            app:layout_constraintBottom_toTopOf="@id/view3"
+            app:layout_constraintEnd_toStartOf="@id/amount"
+            app:layout_constraintStart_toEndOf="@id/tripType"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/amount"
+            style="@style/Text_regular_14sp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_rupee_svg"
+            android:drawableLeft="@drawable/ic_rupee_svg"
+            android:drawablePadding="@dimen/_6dp"
+            android:maxLength="8"
+            android:maxLines="1"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="50000" />
+
+        <View
+            android:id="@+id/view3"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_1dp"
+            android:layout_marginTop="@dimen/_8dp"
+            android:background="@color/color_f1f1f1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/dateTime" />
+
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/cabNumber"
+            style="@style/Text_regular_14sp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_12dp"
+            android:drawableStart="@drawable/ic_car_hatchback_svg"
+            android:drawableLeft="@drawable/ic_car_hatchback_svg"
+            android:drawablePadding="@dimen/_8dp"
+            android:gravity="start"
+            android:maxLength="24"
+            android:maxLines="1"
+            android:textAlignment="viewStart"
+            android:textColor="@color/color_7f7f7f"
+            app:layout_constraintEnd_toStartOf="@id/driverName"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/view3"
+            tools:text="Wed, Nov 17 | 10:13 AM" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/driverName"
+            style="@style/Text_regular_14sp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_8dp"
+            android:layout_marginLeft="@dimen/_8dp"
+            android:layout_marginTop="@dimen/_12dp"
+            android:drawableStart="@drawable/ic_small_driver_circular_svg"
+            android:drawableLeft="@drawable/ic_small_driver_circular_svg"
+            android:drawablePadding="@dimen/_8dp"
+            android:gravity="start"
+            android:maxLength="24"
+            android:maxLines="1"
+            android:textAlignment="viewStart"
+            android:textColor="@color/color_7f7f7f"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/cabNumber"
+            app:layout_constraintTop_toBottomOf="@id/view3"
+            tools:text="Akash Kumar" />
+
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/userName"
+            style="@style/Text_medium_14sp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_16dp"
+            android:layout_marginEnd="@dimen/_8dp"
+            android:layout_marginRight="@dimen/_8dp"
+            android:maxLines="2"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toStartOf="@id/callDriver"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cabNumber"
+            tools:text="@tools:sample/lorem/random" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/callDriver"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/_6dp"
+            android:layout_marginTop="@dimen/_16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cabNumber"
+            app:srcCompat="@drawable/ic_call_svg" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/pickUpIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@id/pickUpLocation"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/pickUpLocation"
+            app:srcCompat="@drawable/ic_pickup_green_svg" />
+
+        <View
+            android:id="@+id/dottedLine"
+            android:layout_width="@dimen/_1dp"
+            android:layout_height="@dimen/_0dp"
+            android:background="@color/color_f1f1f1"
+            app:layout_constraintBottom_toTopOf="@id/dropIcon"
+            app:layout_constraintEnd_toEndOf="@id/pickUpIcon"
+            app:layout_constraintStart_toStartOf="@id/pickUpIcon"
+            app:layout_constraintTop_toBottomOf="@id/pickUpIcon" />
+
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/pickUpLocation"
+            style="@style/Text_regular_14sp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_8dp"
+            android:gravity="start"
+            android:maxLines="2"
+            android:textAlignment="viewStart"
+            android:textColor="@color/color_7f7f7f"
+            app:layout_constraintEnd_toStartOf="@id/pending"
+            app:layout_constraintStart_toEndOf="@id/pickUpIcon"
+            app:layout_constraintTop_toBottomOf="@id/userName"
+            tools:text=" New Delhi" />
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/dropIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@id/dropLocation"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/pickUpIcon"
+            app:layout_constraintTop_toTopOf="@id/dropLocation"
+            app:srcCompat="@drawable/ic_drop_red_svg" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/dropLocation"
+            style="@style/Text_regular_14sp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_8dp"
+            android:gravity="start"
+            android:maxLines="2"
+            android:textAlignment="viewStart"
+            android:textColor="@color/color_7f7f7f"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/pending"
+            app:layout_constraintStart_toEndOf="@id/dropIcon"
+            app:layout_constraintTop_toBottomOf="@id/pickUpLocation"
+            tools:text=" Uttarakhand." />
+
+
+        <LinearLayout
+            android:id="@+id/pending"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/bg_rectangular_fff9e9_4dp"
+            android:padding="@dimen/_6dp"
+            app:layout_constraintBottom_toBottomOf="@id/dropLocation"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/pickUpLocation">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/pendingAmount"
+                style="@style/Text_medium_14sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:maxLines="1"
+                android:text="@string/pending"
+                android:textAlignment="center"
+                android:textColor="@color/color_f9c22d"
+                tools:text="Pending $3000" />
+
+        </LinearLayout>
+
+
+        <!--        <com.google.android.material.textview.MaterialTextView-->
+        <!--            android:id="@+id/driverName"-->
+        <!--            android:layout_width="0dp"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_marginTop="@dimen/_2sdp"-->
+        <!--            android:fontFamily="@font/opensans_regular"-->
+        <!--            android:maxLength="15"-->
+        <!--            android:maxLines="1"-->
+        <!--            android:textColor="@color/color_666666"-->
+        <!--            android:textSize="@dimen/_10sdp"-->
+        <!--            app:layout_constraintEnd_toStartOf="@id/cabName"-->
+        <!--            app:layout_constraintStart_toStartOf="@id/userName"-->
+        <!--            app:layout_constraintTop_toBottomOf="@id/userName"-->
+        <!--            tools:text="@tools:sample/lorem/random" />-->
+
+
+        <!--        <com.google.android.material.textview.MaterialTextView-->
+        <!--            android:id="@+id/cabName"-->
+        <!--            android:layout_width="0dp"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_marginTop="@dimen/_2sdp"-->
+        <!--            android:fontFamily="@font/opensans_regular"-->
+        <!--            android:gravity="end"-->
+        <!--            android:maxLength="25"-->
+        <!--            android:maxLines="1"-->
+        <!--            android:textAlignment="viewEnd"-->
+        <!--            android:textColor="@color/color_666666"-->
+        <!--            android:textSize="@dimen/_10sdp"-->
+        <!--            app:layout_constraintEnd_toEndOf="parent"-->
+        <!--            app:layout_constraintStart_toEndOf="@id/driverName"-->
+        <!--            app:layout_constraintTop_toBottomOf="@id/userName"-->
+        <!--            tools:text="@tools:sample/lorem/random" />-->
+
+        <!--        <com.google.android.material.textview.MaterialTextView-->
+        <!--            android:id="@+id/amount"-->
+        <!--            android:layout_width="0dp"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_marginTop="@dimen/_2sdp"-->
+        <!--            android:fontFamily="@font/opensans_regular"-->
+        <!--            android:maxLines="1"-->
+        <!--            android:textColor="@color/green_text"-->
+        <!--            android:textSize="@dimen/_10sdp"-->
+        <!--            app:layout_constraintEnd_toStartOf="@id/pending"-->
+        <!--            app:layout_constraintStart_toStartOf="@id/userName"-->
+        <!--            app:layout_constraintTop_toBottomOf="@id/driverName"-->
+        <!--            tools:text="@tools:sample/lorem" />-->
+
+
+        <!--        <com.google.android.material.textview.MaterialTextView-->
+        <!--            android:id="@+id/bookingType"-->
+        <!--            android:layout_width="wrap_content"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:fontFamily="@font/opensans_regular"-->
+        <!--            android:gravity="end"-->
+        <!--            android:maxLength="25"-->
+        <!--            android:maxLines="1"-->
+        <!--            android:textAlignment="viewEnd"-->
+        <!--            android:textColor="@color/color_666666"-->
+        <!--            android:textSize="@dimen/_10sdp"-->
+        <!--            app:layout_constraintBottom_toBottomOf="@id/userName"-->
+        <!--            app:layout_constraintEnd_toStartOf="@id/bookingConfirmed"-->
+        <!--            app:layout_constraintStart_toEndOf="@id/userName"-->
+        <!--            app:layout_constraintTop_toTopOf="@id/userName"-->
+        <!--            tools:text="@tools:sample/lorem" />-->
+
+        <!--        <com.google.android.material.textview.MaterialTextView-->
+        <!--            android:id="@+id/bookingConfirmed"-->
+        <!--            android:layout_width="wrap_content"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_marginTop="@dimen/_4sdp"-->
+        <!--            android:layout_marginBottom="@dimen/_6sdp"-->
+        <!--            android:fontFamily="@font/opensans_bold"-->
+        <!--            android:maxLines="1"-->
+        <!--            android:textColor="@color/colorBlue"-->
+        <!--            android:textSize="@dimen/_10sdp"-->
+        <!--            app:layout_constraintBottom_toBottomOf="@id/userName"-->
+        <!--            app:layout_constraintEnd_toEndOf="parent"-->
+        <!--            app:layout_constraintStart_toEndOf="@id/bookingType"-->
+        <!--            app:layout_constraintTop_toTopOf="@id/userName"-->
+        <!--            tools:text="@tools:sample/lorem" />-->
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

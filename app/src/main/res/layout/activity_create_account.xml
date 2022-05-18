@@ -1,0 +1,1135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="crViewModelBinding"
+            type="com.cabbooking.ui.createAccount.CreateAccountViewModel" />
+
+        <variable
+            name="isVender"
+            type="Boolean" />
+
+        <variable
+            name="isLicenceUploaded"
+            type="Boolean" />
+
+
+        <variable
+            name="isAdharFrontUploaded"
+            type="Boolean" />
+
+        <variable
+            name="isAdharBackUploaded"
+            type="Boolean" />
+
+
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/signUpRoot"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:fillViewport="true"
+        tools:context=".ui.createAccount.CreateAccountActivity">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/toolbarCl"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_162sdp"
+                android:background="@drawable/gradient_f9c22d_d39200"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_faastr_logo_svg">
+
+                </androidx.appcompat.widget.AppCompatImageView>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!--                <ImageView-->
+            <!--                    android:id="@+id/backBtn"-->
+            <!--                    android:layout_width="wrap_content"-->
+            <!--                    android:layout_height="wrap_content"-->
+            <!--                    android:layout_marginTop="@dimen/_10sdp"-->
+            <!--                    android:onClick="@{(v)->crViewModelBinding.onClick(v)}"-->
+            <!--                    android:padding="@dimen/_5sdp"-->
+            <!--                    android:scaleType="fitCenter"-->
+            <!--                    android:src="@drawable/back_button"-->
+            <!--                    app:layout_constraintLeft_toLeftOf="parent"-->
+            <!--                    app:layout_constraintTop_toTopOf="parent"-->
+            <!--                    tools:ignore="ContentDescription" />-->
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_20sdp"
+                android:background="@drawable/bg_white_rounded_bottom_sheet"
+                app:layout_constraintBottom_toTopOf="@id/dummyCl" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/dummyCl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:paddingHorizontal="@dimen/_20sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/toolbarCl">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/headingText"
+                    style="@style/Text_semiBold_20sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    android:text="@string/welcome_to_faastr"
+                    android:textColor="@color/color_212121"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="@dimen/_28dp"
+                    android:layout_height="@dimen/_28dp"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_marginLeft="@dimen/_6sdp"
+                    app:layout_constraintStart_toEndOf="@id/headingText"
+                    app:layout_constraintTop_toTopOf="@id/headingText"
+                    app:srcCompat="@drawable/waving" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/descText"
+                    style="@style/Text_regular_14sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_20dp"
+                    android:gravity="start"
+                    android:text="@string/hello_i_guess_you_are_new_around_here_you_can_start_using_the_application_after_sign_up"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/color_7f7f7f"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/headingText" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/nameText"
+                    style="@style/Text_regular_14sp"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_40dp"
+                    android:gravity="start"
+                    android:text="@string/enter_name"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/color_7f7f7f"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/descText" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/fullName"
+                    style="@style/EditText_medium_14sp"
+                    android:layout_marginTop="@dimen/_14dp"
+                    android:background="@drawable/bg_rectangular_f2f2f2"
+                    android:hint="@string/enter_full_name"
+                    android:imeOptions="actionNext"
+                    android:inputType="textCapSentences"
+                    android:padding="@dimen/_10dp"
+                    android:singleLine="true"
+                    android:text="@={crViewModelBinding.userName}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/nameText" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/companyNameText"
+                    style="@style/Text_regular_14sp"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_20dp"
+                    android:gravity="start"
+                    android:text="@string/company_name"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/color_7f7f7f"
+                    android:visibility="@{isVender ? View.VISIBLE:View.GONE , default = visible}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/fullName" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/companyName"
+                    style="@style/EditText_medium_14sp"
+                    android:layout_marginTop="@dimen/_14dp"
+                    android:background="@drawable/bg_rectangular_f2f2f2"
+                    android:hint="@string/enter_company_name"
+                    android:imeOptions="actionNext"
+                    android:inputType="textCapSentences"
+                    android:padding="@dimen/_4sdp"
+                    android:singleLine="true"
+                    android:text="@={crViewModelBinding.companyName}"
+                    android:visibility="@{isVender ? View.VISIBLE:View.GONE , default = visible}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/companyNameText" />
+
+                <!--                <com.google.android.material.textfield.TextInputLayout-->
+                <!--                    android:id="@+id/companyNameLayout"-->
+                <!--                    android:layout_width="0dp"-->
+                <!--                    android:layout_height="@dimen/_35sdp"-->
+                <!--                    android:layout_marginTop="@dimen/_15sdp"-->
+                <!--                    android:focusable="false"-->
+                <!--                    android:fontFamily="@font/opensans_regular"-->
+                <!--                    android:textColorHint="@color/color_666666"-->
+                <!--                    android:visibility="@{isVender ? View.VISIBLE:View.GONE , default = visible}"-->
+                <!--                    app:hintTextColor="@color/color_666666"-->
+                <!--                    app:layout_constraintEnd_toEndOf="parent"-->
+                <!--                    app:layout_constraintStart_toStartOf="parent"-->
+                <!--                    app:layout_constraintTop_toBottomOf="@+id/fullName">-->
+
+                <!--                    <androidx.appcompat.widget.AppCompatEditText-->
+                <!--                        android:id="@+id/companyName"-->
+                <!--                        android:layout_width="match_parent"-->
+                <!--                        android:layout_height="match_parent"-->
+                <!--                        android:background="@android:color/transparent"-->
+                <!--                        android:fontFamily="@font/opensans_regular"-->
+                <!--                        android:hint="@string/enter_company_name"-->
+                <!--                        android:imeOptions="actionNext"-->
+                <!--                        android:inputType="text"-->
+                <!--                        android:singleLine="true"-->
+                <!--                        android:text="@={crViewModelBinding.companyName}"-->
+                <!--                        android:textCursorDrawable="@null"-->
+                <!--                        android:textSize="14sp"-->
+                <!--                        tools:ignore="Autofill" />-->
+
+                <!--                </com.google.android.material.textfield.TextInputLayout>-->
+
+                <!--                                <View-->
+                <!--                                    android:id="@+id/viewCompany"-->
+                <!--                                    android:layout_width="match_parent"-->
+                <!--                                    android:layout_height="1dp"-->
+                <!--                                    android:alpha="0.2"-->
+                <!--                                    android:background="@color/black"-->
+                <!--                                    android:visibility="@{isVender ? View.VISIBLE:View.GONE , default = visible}"-->
+                <!--                                    app:layout_constraintTop_toBottomOf="@id/companyNameText" />-->
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/numbText"
+                    style="@style/Text_regular_14sp"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_20dp"
+                    android:gravity="start"
+                    android:text="@string/enter_phone_number"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/color_7f7f7f"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/companyName" />
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/contactCL"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_50dp"
+                    android:layout_marginTop="@dimen/_14dp"
+                    android:background="@drawable/bg_rectangular_f2f2f2"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/numbText">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/indFlag"
+                        android:layout_width="@dimen/_28sdp"
+                        android:layout_height="@dimen/_28sdp"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginLeft="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_15sdp"
+                        android:layout_marginBottom="@dimen/_15sdp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/ccp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/flag" />
+
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/ccp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_15sdp"
+                        android:layout_marginBottom="@dimen/_15sdp"
+                        android:fontFamily="@font/opensans_semi_bold"
+                        android:padding="@dimen/_10sdp"
+                        android:text="@string/_91"
+                        android:textColor="@color/color_212121"
+                        android:textSize="@dimen/_14sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/view"
+                        app:layout_constraintStart_toEndOf="@+id/indFlag"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <View
+                        android:id="@+id/view"
+                        android:layout_width="1dp"
+                        android:layout_height="0dp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_marginBottom="@dimen/_10sdp"
+                        android:alpha="0.2"
+                        android:background="@color/black"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/ccp"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/mobileNumber"
+                        style="@style/EditText_medium_number_14sp"
+                        android:layout_height="0dp"
+                        android:layout_marginStart="@dimen/_5sdp"
+                        android:layout_marginLeft="@dimen/_5sdp"
+                        android:background="@null"
+                        android:gravity="center_vertical"
+                        android:hint="@string/enter_phone_number"
+                        android:imeOptions="actionDone"
+                        android:padding="@dimen/_10dp"
+                        android:text="@={crViewModelBinding.mobileNumber}"
+                        android:textAlignment="gravity"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toEndOf="@id/view"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.538" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <!--                <androidx.constraintlayout.widget.ConstraintLayout-->
+                <!--                    android:id="@+id/contactCL"-->
+                <!--                    android:layout_width="0dp"-->
+                <!--                    android:layout_height="@dimen/_40sdp"-->
+                <!--                    android:layout_marginTop="@dimen/_20sdp"-->
+                <!--                    app:layout_constraintEnd_toEndOf="parent"-->
+                <!--                    app:layout_constraintStart_toStartOf="parent"-->
+                <!--                    app:layout_constraintTop_toBottomOf="@id/companyName">-->
+
+                <!--                    <com.google.android.material.textview.MaterialTextView-->
+                <!--                        android:id="@+id/ccp"-->
+                <!--                        android:layout_width="wrap_content"-->
+                <!--                        android:layout_height="wrap_content"-->
+                <!--                        android:fontFamily="@font/opensans_semi_bold"-->
+                <!--                        android:padding="@dimen/_10sdp"-->
+                <!--                        android:text="@string/_91"-->
+                <!--                        android:textColor="@color/black"-->
+                <!--                        android:textColorHint="@color/color_7D7D7D"-->
+                <!--                        android:textSize="14sp"-->
+                <!--                        app:layout_constraintBottom_toBottomOf="parent"-->
+                <!--                        app:layout_constraintEnd_toStartOf="@id/view"-->
+                <!--                        app:layout_constraintStart_toStartOf="parent"-->
+                <!--                        app:layout_constraintTop_toTopOf="parent" />-->
+
+                <!--                    <View-->
+                <!--                        android:id="@+id/view"-->
+                <!--                        android:layout_width="1dp"-->
+                <!--                        android:layout_height="0dp"-->
+                <!--                        android:layout_marginTop="@dimen/_10sdp"-->
+                <!--                        android:layout_marginBottom="@dimen/_10sdp"-->
+                <!--                        android:alpha="0.2"-->
+                <!--                        android:background="@color/black"-->
+                <!--                        app:layout_constraintBottom_toBottomOf="parent"-->
+                <!--                        app:layout_constraintStart_toEndOf="@id/ccp"-->
+                <!--                        app:layout_constraintTop_toTopOf="parent" />-->
+
+                <!--                    <EditText-->
+                <!--                        android:id="@+id/mobileNumber"-->
+                <!--                        android:layout_width="0dp"-->
+                <!--                        android:layout_height="@dimen/_30sdp"-->
+                <!--                        android:layout_margin="@dimen/_5sdp"-->
+                <!--                        android:background="@android:color/transparent"-->
+                <!--                        android:digits="0123456789"-->
+                <!--                        android:hint="@string/enter_mobile_number"-->
+                <!--                        android:imeOptions="actionNext"-->
+                <!--                        android:importantForAutofill="no"-->
+                <!--                        android:inputType="phone"-->
+                <!--                        android:maxLength="10"-->
+                <!--                        android:paddingStart="@dimen/_10sdp"-->
+                <!--                        android:paddingLeft="@dimen/_10sdp"-->
+                <!--                        android:text="@={crViewModelBinding.mobileNumber}"-->
+                <!--                        android:textColor="@color/black"-->
+                <!--                        android:textColorHint="@color/color_7D7D7D"-->
+                <!--                        android:textSize="14sp"-->
+                <!--                        app:layout_constraintBottom_toBottomOf="parent"-->
+                <!--                        app:layout_constraintEnd_toEndOf="parent"-->
+                <!--                        app:layout_constraintHorizontal_bias="0.0"-->
+                <!--                        app:layout_constraintStart_toEndOf="@id/view"-->
+                <!--                        app:layout_constraintTop_toTopOf="parent"-->
+                <!--                        app:layout_constraintVertical_bias="0.538"-->
+                <!--                        tools:ignore="RtlSymmetry" />-->
+
+                <!--                    <View-->
+                <!--                        android:id="@+id/viewPassword"-->
+                <!--                        android:layout_width="match_parent"-->
+                <!--                        android:layout_height="1dp"-->
+                <!--                        android:alpha="0.2"-->
+                <!--                        android:background="@color/black"-->
+                <!--                        app:layout_constraintEnd_toEndOf="parent"-->
+                <!--                        app:layout_constraintStart_toStartOf="parent"-->
+                <!--                        app:layout_constraintTop_toBottomOf="@id/ccp" />-->
+
+                <!--                </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/dummyCL"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/contactCL">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/venderCL"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="@{isVender ? View.VISIBLE:View.GONE , default = gone}"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/stateListText"
+                            style="@style/Text_regular_14sp"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_20dp"
+                            android:gravity="start"
+                            android:text="@string/select_state"
+                            android:textAlignment="viewStart"
+                            android:textColor="@color/color_7f7f7f"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/stateList"
+                            style="@style/Text_medium_14sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_50dp"
+                            android:layout_marginTop="@dimen/_14dp"
+                            android:background="@drawable/bg_rectangular_f2f2f2"
+                            android:drawableEnd="@drawable/ic_drop_down_svg"
+                            android:drawableRight="@drawable/ic_drop_down_svg"
+                            android:gravity="center_vertical"
+                            android:hint="@string/select_state"
+                            android:inputType="text"
+                            android:onClick="@{(v)->crViewModelBinding.onClick(v)}"
+                            android:padding="@dimen/_10dp"
+                            android:textColor="@color/color_212121"
+                            android:textColorHint="@color/color_7f7f7f"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/stateListText"
+                            tools:ignore="RtlSymmetry" />
+
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/stateDistrictText"
+                            style="@style/Text_regular_14sp"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_20dp"
+                            android:gravity="start"
+                            android:text="@string/select_district"
+                            android:textAlignment="viewStart"
+                            android:textColor="@color/color_7f7f7f"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/stateList" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/districtList"
+                            style="@style/Text_medium_14sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_50dp"
+                            android:layout_marginTop="@dimen/_14dp"
+                            android:background="@drawable/bg_rectangular_f2f2f2"
+                            android:drawableEnd="@drawable/ic_drop_down_svg"
+                            android:drawableRight="@drawable/ic_drop_down_svg"
+                            android:gravity="center_vertical"
+                            android:hint="@string/select_district"
+                            android:inputType="text"
+                            android:onClick="@{(v)->crViewModelBinding.onClick(v)}"
+                            android:padding="@dimen/_10dp"
+                            android:textColor="@color/color_212121"
+                            android:textColorHint="@color/color_7f7f7f"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/stateDistrictText" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/stateCityText"
+                            style="@style/Text_regular_14sp"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_20dp"
+                            android:gravity="start"
+                            android:text="@string/select_city"
+                            android:textAlignment="viewStart"
+                            android:textColor="@color/color_7f7f7f"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/districtList" />
+
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/cityList"
+                            style="@style/Text_medium_14sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_50dp"
+                            android:layout_marginTop="@dimen/_14dp"
+                            android:background="@drawable/bg_rectangular_f2f2f2"
+                            android:drawableEnd="@drawable/ic_drop_down_svg"
+                            android:drawableRight="@drawable/ic_drop_down_svg"
+                            android:gravity="center_vertical"
+                            android:hint="@string/select_city"
+                            android:inputType="text"
+                            android:onClick="@{(v)->crViewModelBinding.onClick(v)}"
+                            android:padding="@dimen/_10dp"
+                            android:textColor="@color/color_212121"
+                            android:textColorHint="@color/color_7f7f7f"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/stateCityText" />
+
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/pinCodeLayoutText"
+                            style="@style/Text_regular_14sp"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_20dp"
+                            android:gravity="start"
+                            android:text="@string/enter_pincode"
+                            android:textAlignment="viewStart"
+                            android:textColor="@color/color_7f7f7f"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/cityList" />
+
+                        <androidx.appcompat.widget.AppCompatEditText
+                            android:id="@+id/pinCode"
+                            style="@style/EditText_medium_14sp"
+                            android:layout_marginTop="@dimen/_14dp"
+                            android:background="@drawable/bg_rectangular_f2f2f2"
+                            android:digits="0123456789"
+                            android:hint="@string/enter_pincode"
+                            android:imeOptions="actionDone"
+                            android:inputType="number"
+                            android:maxLength="6"
+                            android:padding="@dimen/_10dp"
+                            android:singleLine="true"
+                            android:text="@={crViewModelBinding.pinCode}"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/pinCodeLayoutText" />
+
+                        <!--                        <com.google.android.material.textfield.TextInputLayout-->
+                        <!--                            android:id="@+id/pinCodeLayout"-->
+                        <!--                            android:layout_width="0dp"-->
+                        <!--                            android:layout_height="@dimen/_35sdp"-->
+                        <!--                            android:layout_marginTop="@dimen/_15sdp"-->
+                        <!--                            android:focusable="false"-->
+                        <!--                            android:fontFamily="@font/opensans_regular"-->
+                        <!--                            android:textColorHint="@color/color_666666"-->
+                        <!--                            app:hintTextColor="@color/color_666666"-->
+                        <!--                            app:layout_constraintEnd_toEndOf="parent"-->
+                        <!--                            app:layout_constraintStart_toStartOf="parent"-->
+                        <!--                            app:layout_constraintTop_toBottomOf="@+id/cityList">-->
+
+                        <!--                            <EditText-->
+                        <!--                                android:id="@+id/pinCode"-->
+                        <!--                                android:layout_width="match_parent"-->
+                        <!--                                android:layout_height="match_parent"-->
+                        <!--                                android:background="@android:color/transparent"-->
+                        <!--                                android:digits="0123456789"-->
+                        <!--                                android:fontFamily="@font/opensans_regular"-->
+                        <!--                                android:hint="@string/enter_pincode"-->
+                        <!--                                android:imeOptions="actionDone"-->
+                        <!--                                android:inputType="number"-->
+                        <!--                                android:maxLength="6"-->
+                        <!--                                android:singleLine="true"-->
+                        <!--                                android:text="@={crViewModelBinding.pinCode}"-->
+                        <!--                                android:textCursorDrawable="@null"-->
+                        <!--                                android:textSize="14sp"-->
+                        <!--                                tools:ignore="Autofill" />-->
+
+                        <!--                        </com.google.android.material.textfield.TextInputLayout>-->
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/dummyDriverCL"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="@{isVender ? View.GONE:View.VISIBLE , default = visible}"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/licenceLayoutText"
+                            style="@style/Text_regular_14sp"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_20dp"
+                            android:gravity="start"
+                            android:text="@string/licence_number"
+                            android:textAlignment="viewStart"
+                            android:textColor="@color/color_7f7f7f"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <androidx.appcompat.widget.AppCompatEditText
+                            android:id="@+id/licenceNumber"
+                            style="@style/EditText_medium_14sp"
+                            android:layout_marginTop="@dimen/_14dp"
+                            android:background="@drawable/bg_rectangular_f2f2f2"
+                            android:hint="@string/enter_licence_number"
+                            android:imeOptions="actionNext"
+                            android:inputType="textCapWords"
+                            android:maxLength="16"
+                            android:padding="@dimen/_4sdp"
+                            android:singleLine="true"
+                            android:text="@={crViewModelBinding.licenceNumber}"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/licenceLayoutText" />
+
+
+                        <!--                        <com.google.android.material.textfield.TextInputLayout-->
+                        <!--                            android:id="@+id/licenceLayout"-->
+                        <!--                            android:layout_width="0dp"-->
+                        <!--                            android:layout_height="@dimen/_35sdp"-->
+                        <!--                            android:layout_marginTop="@dimen/_15sdp"-->
+                        <!--                            android:focusable="false"-->
+                        <!--                            android:fontFamily="@font/opensans_regular"-->
+                        <!--                            android:textColorHint="@color/color_666666"-->
+                        <!--                            app:hintTextColor="@color/color_666666"-->
+                        <!--                            app:layout_constraintEnd_toEndOf="parent"-->
+                        <!--                            app:layout_constraintStart_toStartOf="parent"-->
+                        <!--                            app:layout_constraintTop_toTopOf="parent">-->
+
+                        <!--                            <EditText-->
+                        <!--                                android:id="@+id/licenceNumber"-->
+                        <!--                                android:layout_width="match_parent"-->
+                        <!--                                android:layout_height="match_parent"-->
+                        <!--                                android:background="@android:color/transparent"-->
+                        <!--                                android:fontFamily="@font/opensans_regular"-->
+                        <!--                                android:hint="@string/enter_licence_number"-->
+                        <!--                                android:imeOptions="actionNext"-->
+                        <!--                                android:inputType="text"-->
+                        <!--                                android:maxLength="16"-->
+                        <!--                                android:singleLine="true"-->
+                        <!--                                android:text="@={crViewModelBinding.licenceNumber}"-->
+                        <!--                                android:textCursorDrawable="@null"-->
+                        <!--                                android:textSize="14sp"-->
+                        <!--                                tools:ignore="Autofill,TextFields" />-->
+
+                        <!--                        </com.google.android.material.textfield.TextInputLayout>-->
+
+                        <!--                        <View-->
+                        <!--                            android:id="@+id/viewLicence"-->
+                        <!--                            android:layout_width="match_parent"-->
+                        <!--                            android:layout_height="1dp"-->
+                        <!--                            android:alpha="0.2"-->
+                        <!--                            android:background="@color/black"-->
+                        <!--                            app:layout_constraintTop_toBottomOf="@id/licenceLayout" />-->
+
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/uploadLicenceText"
+                            style="@style/Text_medium_14sp"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_20dp"
+                            android:text="@string/upload_licence"
+                            android:textColor="@color/black"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/licenceNumber" />
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/uploadLicenceCl"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_90sdp"
+                            android:layout_marginTop="@dimen/_14dp"
+                            android:background="@drawable/bg_white_black_outline"
+                            android:onClick="@{(v)->crViewModelBinding.onClick(v)}"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/uploadLicenceText">
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:id="@+id/imgLicence"
+                                android:layout_width="@dimen/_220dp"
+                                android:layout_height="@dimen/_0dp"
+                                android:layout_margin="@dimen/_4dp"
+                                android:onClick="@{(v)->crViewModelBinding.onClick(v)}"
+                                android:scaleType="fitXY"
+                                android:visibility="@{isLicenceUploaded ? View.VISIBLE : View.GONE,default =gone }"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:srcCompat="@drawable/ic_upload_photo_svg" />
+
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:id="@+id/uploadImg"
+                                android:layout_width="@dimen/_30sdp"
+                                android:layout_height="@dimen/_30sdp"
+                                android:layout_marginTop="@dimen/_14sdp"
+                                android:scaleType="fitXY"
+                                android:visibility="@{isLicenceUploaded ? View.GONE : View.VISIBLE,default =visible }"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:srcCompat="@drawable/ic_upload_photo_svg" />
+
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/uploadYourLicenceText"
+                                style="@style/Text_regular_14sp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:text="@string/upload_your_driving_license"
+                                android:textAlignment="center"
+                                android:textColor="@color/color_7f7f7f"
+                                android:textSize="@dimen/_12sp"
+                                android:visibility="@{isLicenceUploaded ? View.GONE : View.VISIBLE,default =visible }"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@id/uploadImg" />
+
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                        <!--                        <com.google.android.material.textview.MaterialTextView-->
+                        <!--                            android:id="@+id/uploadImgButton"-->
+                        <!--                            android:layout_width="90dp"-->
+                        <!--                            android:layout_height="30dp"-->
+                        <!--                            android:layout_marginStart="@dimen/_20sdp"-->
+                        <!--                            android:layout_marginLeft="@dimen/_20sdp"-->
+                        <!--                            android:background="@drawable/bg_button_rounded_blue"-->
+                        <!--                            android:elevation="1dp"-->
+                        <!--                            android:fontFamily="@font/opensans_semi_bold"-->
+                        <!--                            android:gravity="center"-->
+                        <!--                            android:onClick="@{(v)->crViewModelBinding.onClick(v)}"-->
+                        <!--                            android:text="@string/upload"-->
+                        <!--                            android:textColor="@color/white"-->
+                        <!--                            android:textSize="13sp"-->
+                        <!--                            app:layout_constraintBottom_toBottomOf="@id/uploadDocsText"-->
+                        <!--                            app:layout_constraintStart_toEndOf="@id/uploadDocsText"-->
+                        <!--                            app:layout_constraintTop_toTopOf="@id/uploadDocsText"-->
+                        <!--                            tools:targetApi="lollipop" />-->
+
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/adharNumberText"
+                            style="@style/Text_regular_14sp"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_20dp"
+                            android:gravity="start"
+                            android:text="@string/adhar_card_number"
+                            android:textAlignment="viewStart"
+                            android:textColor="@color/color_7f7f7f"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/uploadLicenceCl" />
+
+                        <androidx.appcompat.widget.AppCompatEditText
+                            android:id="@+id/adharNumber"
+                            style="@style/EditText_medium_14sp"
+                            android:layout_marginTop="@dimen/_14dp"
+                            android:background="@drawable/bg_rectangular_f2f2f2"
+                            android:hint="@string/enter_adhar_number"
+                            android:imeOptions="actionNext"
+                            android:inputType="text"
+                            android:maxLength="12"
+                            android:padding="@dimen/_4sdp"
+                            android:singleLine="true"
+                            android:text="@={crViewModelBinding.adharNumber}"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/adharNumberText" />
+
+
+                        <!--                        <com.google.android.material.textfield.TextInputLayout-->
+                        <!--                            android:id="@+id/adharLayout"-->
+                        <!--                            android:layout_width="0dp"-->
+                        <!--                            android:layout_height="@dimen/_35sdp"-->
+                        <!--                            android:layout_marginTop="@dimen/_15sdp"-->
+                        <!--                            android:focusable="false"-->
+                        <!--                            android:fontFamily="@font/opensans_regular"-->
+                        <!--                            android:textColorHint="@color/color_666666"-->
+                        <!--                            app:hintTextColor="@color/color_666666"-->
+                        <!--                            app:layout_constraintEnd_toEndOf="parent"-->
+                        <!--                            app:layout_constraintStart_toStartOf="parent"-->
+                        <!--                            app:layout_constraintTop_toBottomOf="@id/uploadLicenceCl">-->
+
+                        <!--                            <EditText-->
+                        <!--                                android:id="@+id/adharNumber"-->
+                        <!--                                android:layout_width="match_parent"-->
+                        <!--                                android:layout_height="match_parent"-->
+                        <!--                                android:background="@android:color/transparent"-->
+                        <!--                                android:fontFamily="@font/opensans_regular"-->
+                        <!--                                android:hint="@string/enter_adhar_number"-->
+                        <!--                                android:imeOptions="actionNext"-->
+                        <!--                                android:inputType="number"-->
+                        <!--                                android:maxLength="12"-->
+                        <!--                                android:singleLine="true"-->
+                        <!--                                android:text="@={crViewModelBinding.adharNumber}"-->
+                        <!--                                android:textCursorDrawable="@null"-->
+                        <!--                                android:textSize="14sp"-->
+                        <!--                                tools:ignore="Autofill,TextFields" />-->
+
+                        <!--                        </com.google.android.material.textfield.TextInputLayout>-->
+
+                        <!--                        <View-->
+                        <!--                            android:id="@+id/viewAdhar"-->
+                        <!--                            android:layout_width="match_parent"-->
+                        <!--                            android:layout_height="1dp"-->
+                        <!--                            android:alpha="0.2"-->
+                        <!--                            android:background="@color/black"-->
+                        <!--                            app:layout_constraintTop_toBottomOf="@id/adharLayout" />-->
+
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/uploadAdharDocsText"
+                            style="@style/Text_medium_14sp"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_20dp"
+                            android:text="@string/upload_adhar"
+                            android:textColor="@color/black"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/adharNumber" />
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/uploadAdharImgButton"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_90sdp"
+                            android:layout_marginTop="@dimen/_14dp"
+                            android:background="@drawable/bg_white_black_outline"
+                            android:onClick="@{(v)->crViewModelBinding.onClick(v)}"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/uploadAdharDocsText">
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:id="@+id/adharFrontImgShow"
+                                android:layout_width="@dimen/_220dp"
+                                android:layout_height="@dimen/_0dp"
+                                android:layout_margin="@dimen/_4dp"
+                                android:onClick="@{(v)->crViewModelBinding.onClick(v)}"
+                                android:scaleType="fitXY"
+                                android:visibility="@{isAdharFrontUploaded ? View.VISIBLE : View.GONE,default =gone }"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:id="@+id/uploadAdharDocs"
+                                android:layout_width="@dimen/_30sdp"
+                                android:layout_height="@dimen/_30sdp"
+                                android:layout_marginTop="@dimen/_14sdp"
+                                android:scaleType="fitXY"
+                                android:visibility="@{isAdharFrontUploaded ? View.GONE : View.VISIBLE,default =visible }"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:srcCompat="@drawable/ic_upload_photo_svg" />
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/uploadYourAdharText"
+                                style="@style/Text_regular_14sp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:text="@string/upload_your_adhar_card"
+                                android:textAlignment="center"
+                                android:textColor="@color/color_7f7f7f"
+                                android:textSize="@dimen/_12sp"
+                                android:visibility="@{isAdharFrontUploaded ? View.GONE : View.VISIBLE,default =visible }"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@id/uploadAdharDocs" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                        <!--                        <com.google.android.material.textview.MaterialTextView-->
+                        <!--                            android:id="@+id/uploadAdharDocsText"-->
+                        <!--                            android:layout_width="wrap_content"-->
+                        <!--                            android:layout_height="wrap_content"-->
+                        <!--                            android:layout_marginTop="@dimen/_30sdp"-->
+                        <!--                            android:alpha="0.5"-->
+                        <!--                            android:fontFamily="@font/opensans_regular"-->
+                        <!--                            android:text="@string/upload_adhar"-->
+                        <!--                            android:textColor="@color/black"-->
+                        <!--                            android:textSize="13sp"-->
+                        <!--                            app:layout_constraintStart_toStartOf="parent"-->
+                        <!--                            app:layout_constraintTop_toBottomOf="@id/adharNumber" />-->
+
+                        <!--                        <com.google.android.material.textview.MaterialTextView-->
+                        <!--                            android:id="@+id/uploadAdharImgButton"-->
+                        <!--                            android:layout_width="90dp"-->
+                        <!--                            android:layout_height="30dp"-->
+                        <!--                            android:layout_marginStart="@dimen/_20sdp"-->
+                        <!--                            android:layout_marginLeft="@dimen/_20sdp"-->
+                        <!--                            android:background="@drawable/bg_button_rounded_blue"-->
+                        <!--                            android:elevation="1dp"-->
+                        <!--                            android:fontFamily="@font/opensans_semi_bold"-->
+                        <!--                            android:gravity="center"-->
+                        <!--                            android:onClick="@{(v)->crViewModelBinding.onClick(v)}"-->
+                        <!--                            android:text="@string/upload"-->
+                        <!--                            android:textColor="@color/white"-->
+                        <!--                            android:textSize="13sp"-->
+                        <!--                            app:layout_constraintBottom_toBottomOf="@id/uploadAdharDocsText"-->
+                        <!--                            app:layout_constraintStart_toEndOf="@id/uploadAdharDocsText"-->
+                        <!--                            app:layout_constraintTop_toTopOf="@id/uploadAdharDocsText"-->
+                        <!--                            tools:targetApi="lollipop" />-->
+
+
+                        <!--                        <ImageView-->
+                        <!--                            android:id="@+id/uploadAdharImg"-->
+                        <!--                            android:layout_width="@dimen/_130sdp"-->
+                        <!--                            android:layout_height="@dimen/_130sdp"-->
+                        <!--                            android:layout_marginTop="@dimen/_15sdp"-->
+                        <!--                            android:elevation="2dp"-->
+                        <!--                            android:scaleType="fitXY"-->
+                        <!--                            android:src="@drawable/placeholder"-->
+                        <!--                            app:layout_constraintStart_toStartOf="parent"-->
+                        <!--                            app:layout_constraintTop_toBottomOf="@id/uploadAdharDocsText"-->
+                        <!--                            tools:ignore="ContentDescription" />-->
+
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/uploadAdharBackSideDocsText"
+                            style="@style/Text_medium_14sp"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_20dp"
+                            android:text="@string/upload_adhar_back_side"
+                            android:textColor="@color/black"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/uploadAdharImgButton" />
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/uploadAdharBackImgButton"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_90sdp"
+                            android:layout_marginTop="@dimen/_14dp"
+                            android:layout_marginBottom="@dimen/_10sdp"
+                            android:background="@drawable/bg_white_black_outline"
+                            android:onClick="@{(v)->crViewModelBinding.onClick(v)}"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/uploadAdharBackSideDocsText">
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:id="@+id/adharBackImgShow"
+                                android:layout_width="@dimen/_220dp"
+                                android:layout_height="@dimen/_0dp"
+                                android:layout_margin="@dimen/_4dp"
+                                android:onClick="@{(v)->crViewModelBinding.onClick(v)}"
+                                android:scaleType="fitXY"
+                                android:visibility="@{isAdharBackUploaded ? View.VISIBLE : View.GONE,default =gone }"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:id="@+id/uploadAdharBackDocs"
+                                android:layout_width="@dimen/_30sdp"
+                                android:layout_height="@dimen/_30sdp"
+                                android:layout_marginTop="@dimen/_14sdp"
+                                android:scaleType="fitXY"
+                                android:visibility="@{isAdharBackUploaded ? View.GONE : View.VISIBLE,default =visible }"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:srcCompat="@drawable/ic_upload_photo_svg" />
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/uploadYourAdharBackText"
+                                style="@style/Text_regular_14sp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:text="@string/upload_your_adhar_card_back_side"
+                                android:textAlignment="center"
+                                android:textColor="@color/color_7f7f7f"
+                                android:textSize="@dimen/_12sp"
+                                android:visibility="@{isAdharBackUploaded ? View.GONE : View.VISIBLE,default =visible }"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@id/uploadAdharBackDocs" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                        <!--                        <com.google.android.material.textview.MaterialTextView-->
+                        <!--                            android:id="@+id/uploadAdharBackSideDocsText"-->
+                        <!--                            android:layout_width="wrap_content"-->
+                        <!--                            android:layout_height="wrap_content"-->
+                        <!--                            android:layout_marginTop="@dimen/_30sdp"-->
+                        <!--                            android:alpha="0.5"-->
+                        <!--                            android:fontFamily="@font/opensans_regular"-->
+                        <!--                            android:text="@string/upload_adhar_back_side"-->
+                        <!--                            android:textColor="@color/black"-->
+                        <!--                            android:textSize="13sp"-->
+                        <!--                            app:layout_constraintStart_toStartOf="parent"-->
+                        <!--                            app:layout_constraintTop_toBottomOf="@id/uploadAdharImgButton" />-->
+
+                        <!--                        <ImageView-->
+                        <!--                            android:id="@+id/uploadAdharBackImg"-->
+                        <!--                            android:layout_width="@dimen/_130sdp"-->
+                        <!--                            android:layout_height="@dimen/_130sdp"-->
+                        <!--                            android:layout_marginTop="@dimen/_15sdp"-->
+                        <!--                            android:elevation="2dp"-->
+                        <!--                            android:scaleType="fitXY"-->
+                        <!--                            android:src="@drawable/placeholder"-->
+                        <!--                            app:layout_constraintStart_toStartOf="parent"-->
+                        <!--                            app:layout_constraintTop_toBottomOf="@id/uploadAdharBackSideDocsText"-->
+                        <!--                            tools:ignore="ContentDescription" />-->
+
+                        <!--                        <com.google.android.material.textview.MaterialTextView-->
+                        <!--                            android:id="@+id/uploadAdharBackImgButton"-->
+                        <!--                            android:layout_width="90dp"-->
+                        <!--                            android:layout_height="30dp"-->
+                        <!--                            android:layout_marginStart="@dimen/_20sdp"-->
+                        <!--                            android:layout_marginLeft="@dimen/_20sdp"-->
+                        <!--                            android:background="@drawable/bg_button_rounded_blue"-->
+                        <!--                            android:elevation="1dp"-->
+                        <!--                            android:fontFamily="@font/opensans_semi_bold"-->
+                        <!--                            android:gravity="center"-->
+                        <!--                            android:onClick="@{(v)->crViewModelBinding.onClick(v)}"-->
+                        <!--                            android:text="@string/upload"-->
+                        <!--                            android:textColor="@color/white"-->
+                        <!--                            android:textSize="13sp"-->
+                        <!--                            app:layout_constraintBottom_toBottomOf="@id/uploadAdharBackSideDocsText"-->
+                        <!--                            app:layout_constraintStart_toEndOf="@id/uploadAdharBackSideDocsText"-->
+                        <!--                            app:layout_constraintTop_toTopOf="@id/uploadAdharBackSideDocsText"-->
+                        <!--                            tools:targetApi="lollipop" />-->
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/createAccountBtn"
+                    style="@style/ButtonGradientStyle"
+                    android:layout_marginTop="@dimen/_20dp"
+                    android:onClick="@{(v)->crViewModelBinding.onClick(v)}"
+                    android:text="@string/sign_up"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/dummyCL" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/don_have_account"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_20dp"
+                    android:layout_marginBottom="@dimen/_20dp"
+                    android:alpha="0.8"
+                    android:fontFamily="@font/poppins_regular"
+                    android:onClick="@{(v)->crViewModelBinding.onClick(v)}"
+                    android:text="@string/already_have_an_account"
+                    android:textColor="@color/color_7f7f7f"
+                    android:textSize="@dimen/_14sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/loginBtn"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintHorizontal_chainStyle="packed"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/createAccountBtn" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/loginBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_5dp"
+                    android:layout_marginLeft="@dimen/_5dp"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:onClick="@{(v)->crViewModelBinding.onClick(v)}"
+                    android:text="@string/log_in"
+                    android:textColor="@color/color_f9c22d"
+                    android:textSize="@dimen/_16sp"
+                    app:layout_constraintBottom_toBottomOf="@id/don_have_account"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/don_have_account"
+                    app:layout_constraintTop_toTopOf="@id/don_have_account" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</layout>
+
+    <!--        <androidx.constraintlayout.widget.ConstraintLayout-->
+    <!--            android:id="@+id/bottomCL"-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_marginTop="@dimen/_10sdp"-->
+    <!--            android:paddingHorizontal="@dimen/_20sdp"-->
+    <!--            app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--           >-->
+
+    <!--            <Button-->
+    <!--                android:id="@+id/createAccountBtn"-->
+    <!--                style="@style/ButtonGradientStyle"-->
+    <!--                android:layout_width="0dp"-->
+    <!--                android:layout_height="@dimen/_35sdp"-->
+    <!--                android:layout_marginTop="@dimen/_30sdp"-->
+    <!--                android:layout_marginBottom="@dimen/_30sdp"-->
+    <!--                android:elevation="1dp"-->
+    <!--                android:fontFamily="@font/opensans_semi_bold"-->
+    <!--                android:onClick="@{(v)->crViewModelBinding.onClick(v)}"-->
+    <!--                android:text="@string/create_account"-->
+    <!--                android:textAllCaps="true"-->
+    <!--                android:textSize="18sp"-->
+    <!--                app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--                app:layout_constraintEnd_toEndOf="parent"-->
+    <!--                app:layout_constraintStart_toStartOf="parent"-->
+    <!--                app:layout_constraintTop_toBottomOf="@id/dummyCL"-->
+    <!--                tools:targetApi="lollipop" />-->
+
+
+    <!--        </androidx.constraintlayout.widget.ConstraintLayout>-->
+    <!--    </androidx.constraintlayout.widget.ConstraintLayout>-->
+

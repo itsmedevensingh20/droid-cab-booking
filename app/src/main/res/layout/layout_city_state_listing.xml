@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_2dp"
+        android:padding="@dimen/_2dp">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/cityStateTV"
+            style="@style/Text_medium_14sp"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_40dp"
+            android:gravity="center_vertical"
+            android:maxLines="1"
+            android:padding="@dimen/_10dp"
+            android:singleLine="true"
+            android:textColor="@color/color_7f7f7f"
+            android:textColorHint="@color/color_7f7f7f"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="@tools:sample/lorem" />
+
+        <View
+            android:id="@+id/searchView"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="@dimen/_2dp"
+            android:background="@color/color_7f7f7f"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cityStateTV" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

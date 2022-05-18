@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="bookingViewModel"
+            type="com.cabbooking.ui.booking.BookingViewModel" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        tools:context=".ui.booking.CityStateSelectionFragment">
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/stateName"
+            style="@style/EditText_medium_14sp"
+            android:layout_marginHorizontal="@dimen/_10dp"
+            android:layout_marginTop="@dimen/_14dp"
+            android:background="@drawable/bg_rectangular_f2f2f2"
+            android:hint="@string/enter_full_name"
+            android:imeOptions="actionNext"
+            android:inputType="textCapSentences"
+            android:padding="@dimen/_10dp"
+            android:singleLine="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvStateList"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_10dp"
+            android:layout_marginVertical="@dimen/_10dp"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/stateName"
+            app:reverseLayout="false"
+            tools:itemCount="10"
+            tools:listitem="@layout/layout_city_state_listing">
+
+        </androidx.recyclerview.widget.RecyclerView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

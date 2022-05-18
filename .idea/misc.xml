@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Android Stuff/Personal Android stuff/Client_Projects/Cab Booking/app/src/main/res/drawable/bg_blue_circular_filter.xml" value="0.22864583333333333" />
+        <entry key="..\:/Android Stuff/Personal Android stuff/Client_Projects/Cab Booking/app/src/main/res/drawable/bg_light_orange_outline.xml" value="0.2195" />
+        <entry key="..\:/Android Stuff/Personal Android stuff/Client_Projects/Cab Booking/app/src/main/res/drawable/bg_light_pink_receiver.xml" value="0.2195" />
+        <entry key="..\:/Android Stuff/Personal Android stuff/Client_Projects/Cab Booking/app/src/main/res/drawable/bg_light_pink_sender.xml" value="0.2195" />
+        <entry key="..\:/Android Stuff/Personal Android stuff/Client_Projects/Cab Booking/app/src/main/res/drawable/bg_pink_red_outline_2dp.xml" value="0.22864583333333333" />
+        <entry key="..\:/Android Stuff/Personal Android stuff/Client_Projects/Cab Booking/app/src/main/res/drawable/bg_rect_dark_grey.xml" value="0.1665" />
+        <entry key="..\:/Android Stuff/Personal Android stuff/Client_Projects/Cab Booking/app/src/main/res/drawable/bg_rectangular_f2f2f2.xml" value="0.22864583333333333" />
+        <entry key="..\:/Android Stuff/Personal Android stuff/Client_Projects/Cab Booking/app/src/main/res/drawable/bg_rectangular_fff9e9_4dp.xml" value="0.22864583333333333" />
+        <entry key="..\:/Android Stuff/Personal Android stuff/Client_Projects/Cab Booking/app/src/main/res/drawable/bg_rectangular_grey.xml" value="0.22864583333333333" />
+        <entry key="..\:/Android Stuff/Personal Android stuff/Client_Projects/Cab Booking/app/src/main/res/drawable/bg_rectangular_white.xml" value="0.22864583333333333" />
+        <entry key="..\:/Android Stuff/Personal Android stuff/Client_Projects/Cab Booking/app/src/main/res/drawable/bg_rectangular_white_4dp.xml" value="0.22864583333333333" />
+        <entry key="..\:/Android Stuff/Personal Android stuff/Client_Projects/Cab Booking/app/src/main/res/drawable/bg_white_black_outline.xml" value="0.1444078947368421" />
+        <entry key="..\:/Android Stuff/Personal Android stuff/Client_Projects/Cab Booking/app/src/main/res/drawable/bg_white_circular_blue_outline.xml" value="0.22864583333333333" />
+        <entry key="..\:/Android Stuff/Personal Android stuff/Client_Projects/Cab Booking/app/src/main/res/drawable/bg_white_rounded_bottom_sheet.xml" value="0.22864583333333333" />
+        <entry key="..\:/Android Stuff/Personal Android stuff/Client_Projects/Cab Booking/app/src/main/res/drawable/bg_yellow_half_rounded_bottom.xml" value="0.22864583333333333" />
+        <entry key="..\:/Android Stuff/Personal Android stuff/Client_Projects/Cab Booking/app/src/main/res/drawable/cursor_color_f9c22d.xml" value="0.22864583333333333" />
+        <entry key="..\:/Android Stuff/Personal Android stuff/Client_Projects/Cab Booking/app/src/main/res/drawable/custom_filter_checkbox.xml" value="0.14831081081081082" />
+        <entry key="..\:/Android Stuff/Personal Android stuff/Client_Projects/Cab Booking/app/src/main/res/drawable/custom_ratingbar.xml" value="0.22864583333333333" />
+        <entry key="..\:/Android Stuff/Personal Android stuff/Client_Projects/Cab Booking/app/src/main/res/drawable/gradient_f9c22d_d39200.xml" value="0.22864583333333333" />
+        <entry key="..\:/Android Stuff/Personal Android stuff/Client_Projects/Cab Booking/app/src/main/res/drawable/gradient_ripple_f9c22d_d39200.xml" value="0.22864583333333333" />
+        <entry key="..\:/Android Stuff/Personal Android stuff/Client_Projects/Cab Booking/app/src/main/res/drawable/ic_add_svg.xml" value="0.2195" />
+        <entry key="..\:/Android Stuff/Personal Android stuff/Client_Projects/Cab Booking/app/src/main/res/drawable/ic_booking_select_svg.xml" value="0.22864583333333333" />
+        <entry key="..\:/Android Stuff/Personal Android stuff/Client_Projects/Cab Booking/app/src/main/res/drawable/ic_booking_unselect_svg.xml" value="0.2195" />
+        <entry key="..\:/Android Stuff/Personal Android stuff/Client_Projects/Cab Booking/app/src/main/res/drawable/ic_cab_select_svg.xml" value="0.2195" />
+        <entry key="..\:/Android Stuff/Personal Android stuff/Client_Projects/Cab Booking/app/src/main/res/drawable/ic_car_suv_svg.xml" value="0.22864583333333333" />
+        <entry key="..\:/Android Stuff/Personal Android stuff/Client_Projects/Cab Booking/app/src/main/res/drawable/ic_checked_svg.xml" value="0.22864583333333333" />
+        <entry key="..\:/Android Stuff/Personal Android stuff/Client_Projects/Cab Booking/app/src/main/res/drawable/ic_minus_svg.xml" value="0.2195" />
+        <entry key="..\:/Android Stuff/Personal Android stuff/Client_Projects/Cab Booking/app/src/main/res/drawable/ic_route_select_svg.xml" value="0.1665" />
+        <entry key="..\:/Android Stuff/Personal Android stuff/Client_Projects/Cab Booking/app/src/main/res/drawable/ic_route_unselect_svg.xml" value="0.2195" />
+        <entry key="..\:/Android Stuff/Personal Android stuff/Client_Projects/Cab Booking/app/src/main/res/drawable/ic_rupee_svg.xml" value="0.2195" />
+        <entry key="..\:/Android Stuff/Personal Android stuff/Client_Projects/Cab Booking/app/src/main/res/drawable/ic_unchecked_svg.xml" value="0.22864583333333333" />
+        <entry key="..\:/Android Stuff/Personal Android stuff/Client_Projects/Cab Booking/app/src/main/res/drawable/popup_solid_curve.xml" value="0.22864583333333333" />
+        <entry key="..\:/Android Stuff/Personal Android stuff/Client_Projects/Cab Booking/app/src/main/res/drawable/progressbar.xml" value="0.22864583333333333" />
+        <entry key="..\:/Android Stuff/Personal Android stuff/Client_Projects/Cab Booking/app/src/main/res/layout-v21/fragment_cab.xml" value="0.2125" />
+        <entry key="..\:/Android Stuff/Personal Android stuff/Client_Projects/Cab Booking/app/src/main/res/layout/activity_booking_details.xml" value="0.25" />
+        <entry key="..\:/Android Stuff/Personal Android stuff/Client_Projects/Cab Booking/app/src/main/res/layout/activity_city_state_selection.xml" value="0.1" />
+        <entry key="..\:/Android Stuff/Personal Android stuff/Client_Projects/Cab Booking/app/src/main/res/layout/activity_create.xml" value="0.21" />
+        <entry key="..\:/Android Stuff/Personal Android stuff/Client_Projects/Cab Booking/app/src/main/res/layout/activity_create_account.xml" value="0.18" />
+        <entry key="..\:/Android Stuff/Personal Android stuff/Client_Projects/Cab Booking/app/src/main/res/layout/activity_create_booking.xml" value="0.25" />
+        <entry key="..\:/Android Stuff/Personal Android stuff/Client_Projects/Cab Booking/app/src/main/res/layout/activity_create_cab.xml" value="0.2125" />
+        <entry key="..\:/Android Stuff/Personal Android stuff/Client_Projects/Cab Booking/app/src/main/res/layout/activity_filter.xml" value="0.2056451612903226" />
+        <entry key="..\:/Android Stuff/Personal Android stuff/Client_Projects/Cab Booking/app/src/main/res/layout/activity_home_vender.xml" value="0.18" />
+        <entry key="..\:/Android Stuff/Personal Android stuff/Client_Projects/Cab Booking/app/src/main/res/layout/activity_login.xml" value="0.17" />
+        <entry key="..\:/Android Stuff/Personal Android stuff/Client_Projects/Cab Booking/app/src/main/res/layout/activity_main.xml" value="0.2125" />
+        <entry key="..\:/Android Stuff/Personal Android stuff/Client_Projects/Cab Booking/app/src/main/res/layout/activity_otp_verification.xml" value="0.2125" />
+        <entry key="..\:/Android Stuff/Personal Android stuff/Client_Projects/Cab Booking/app/src/main/res/layout/activity_splash.xml" value="0.2125" />
+        <entry key="..\:/Android Stuff/Personal Android stuff/Client_Projects/Cab Booking/app/src/main/res/layout/activity_user_type.xml" value="0.2125" />
+        <entry key="..\:/Android Stuff/Personal Android stuff/Client_Projects/Cab Booking/app/src/main/res/layout/city_state_dialog.xml" value="0.22" />
+        <entry key="..\:/Android Stuff/Personal Android stuff/Client_Projects/Cab Booking/app/src/main/res/layout/custom_progress_dialog.xml" value="0.22" />
+        <entry key="..\:/Android Stuff/Personal Android stuff/Client_Projects/Cab Booking/app/src/main/res/layout/fragment_booking.xml" value="0.25" />
+        <entry key="..\:/Android Stuff/Personal Android stuff/Client_Projects/Cab Booking/app/src/main/res/layout/fragment_cab.xml" value="0.2125" />
+        <entry key="..\:/Android Stuff/Personal Android stuff/Client_Projects/Cab Booking/app/src/main/res/layout/fragment_city_state_selection.xml" value="0.22" />
+        <entry key="..\:/Android Stuff/Personal Android stuff/Client_Projects/Cab Booking/app/src/main/res/layout/fragment_create_account.xml" value="0.2125" />
+        <entry key="..\:/Android Stuff/Personal Android stuff/Client_Projects/Cab Booking/app/src/main/res/layout/fragment_create_booking.xml" value="0.21" />
+        <entry key="..\:/Android Stuff/Personal Android stuff/Client_Projects/Cab Booking/app/src/main/res/layout/fragment_create_cab.xml" value="0.25" />
+        <entry key="..\:/Android Stuff/Personal Android stuff/Client_Projects/Cab Booking/app/src/main/res/layout/fragment_create_driver.xml" value="0.25" />
+        <entry key="..\:/Android Stuff/Personal Android stuff/Client_Projects/Cab Booking/app/src/main/res/layout/fragment_driver.xml" value="0.13783783783783785" />
+        <entry key="..\:/Android Stuff/Personal Android stuff/Client_Projects/Cab Booking/app/src/main/res/layout/fragment_filter.xml" value="0.13783783783783785" />
+        <entry key="..\:/Android Stuff/Personal Android stuff/Client_Projects/Cab Booking/app/src/main/res/layout/fragment_login.xml" value="0.25" />
+        <entry key="..\:/Android Stuff/Personal Android stuff/Client_Projects/Cab Booking/app/src/main/res/layout/fragment_more.xml" value="0.13783783783783785" />
+        <entry key="..\:/Android Stuff/Personal Android stuff/Client_Projects/Cab Booking/app/src/main/res/layout/fragment_profile.xml" value="0.33" />
+        <entry key="..\:/Android Stuff/Personal Android stuff/Client_Projects/Cab Booking/app/src/main/res/layout/fragment_route_list.xml" value="0.25" />
+        <entry key="..\:/Android Stuff/Personal Android stuff/Client_Projects/Cab Booking/app/src/main/res/layout/layout_booking_bid_list.xml" value="0.2125" />
+        <entry key="..\:/Android Stuff/Personal Android stuff/Client_Projects/Cab Booking/app/src/main/res/layout/layout_booking_date_list.xml" value="0.33" />
+        <entry key="..\:/Android Stuff/Personal Android stuff/Client_Projects/Cab Booking/app/src/main/res/layout/layout_booking_filter_list.xml" value="0.2125" />
+        <entry key="..\:/Android Stuff/Personal Android stuff/Client_Projects/Cab Booking/app/src/main/res/layout/layout_booking_list.xml" value="0.25" />
+        <entry key="..\:/Android Stuff/Personal Android stuff/Client_Projects/Cab Booking/app/src/main/res/layout/layout_booking_month_list.xml" value="0.2125" />
+        <entry key="..\:/Android Stuff/Personal Android stuff/Client_Projects/Cab Booking/app/src/main/res/layout/layout_booking_receiver_bid.xml" value="0.33" />
+        <entry key="..\:/Android Stuff/Personal Android stuff/Client_Projects/Cab Booking/app/src/main/res/layout/layout_booking_sender_bid.xml" value="0.5" />
+        <entry key="..\:/Android Stuff/Personal Android stuff/Client_Projects/Cab Booking/app/src/main/res/layout/layout_bottom_sheet.xml" value="0.13783783783783785" />
+        <entry key="..\:/Android Stuff/Personal Android stuff/Client_Projects/Cab Booking/app/src/main/res/layout/layout_cab_details_list.xml" value="0.2125" />
+        <entry key="..\:/Android Stuff/Personal Android stuff/Client_Projects/Cab Booking/app/src/main/res/layout/layout_cab_list.xml" value="0.5" />
+        <entry key="..\:/Android Stuff/Personal Android stuff/Client_Projects/Cab Booking/app/src/main/res/layout/layout_city_state_listing.xml" value="0.2125" />
+        <entry key="..\:/Android Stuff/Personal Android stuff/Client_Projects/Cab Booking/app/src/main/res/layout/layout_driver_list.xml" value="0.33" />
+        <entry key="..\:/Android Stuff/Personal Android stuff/Client_Projects/Cab Booking/app/src/main/res/layout/layout_filter.xml" value="0.13783783783783785" />
+        <entry key="..\:/Android Stuff/Personal Android stuff/Client_Projects/Cab Booking/app/src/main/res/layout/layout_logout_dialog.xml" value="0.25" />
+        <entry key="..\:/Android Stuff/Personal Android stuff/Client_Projects/Cab Booking/app/src/main/res/layout/layout_sucess_dialog.xml" value="0.2125" />
+        <entry key="..\:/Android Stuff/Personal Android stuff/Client_Projects/Cab Booking/app/src/main/res/layout/layout_toolbar_common.xml" value="0.1" />
+        <entry key="..\:/Android Stuff/Personal Android stuff/Client_Projects/Cab Booking/app/src/main/res/menu/option_menu.xml" value="0.2125" />
+        <entry key="..\:/Android Stuff/Personal Android stuff/Client_Projects/Cab Booking/app/src/main/res/mipmap-anydpi-v26/ic_launcher_car.xml" value="0.22864583333333333" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

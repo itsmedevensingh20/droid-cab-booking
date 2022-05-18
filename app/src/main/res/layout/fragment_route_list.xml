@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+
+        <variable
+            name="routeViewModel"
+            type="com.cabbooking.ui.route.RouteViewModel" />
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:paddingHorizontal="@dimen/_10dp"
+        android:paddingVertical="@dimen/_10dp"
+        tools:context=".ui.route.RouteListFragment">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/dateTime"
+            style="@style/Text_regular_14sp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10dp"
+            android:drawableStart="@drawable/ic_clock_svg"
+            android:drawableLeft="@drawable/ic_clock_svg"
+            android:drawablePadding="@dimen/_6dp"
+            android:maxLength="25"
+            android:maxLines="1"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toStartOf="@id/amount"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:text="Wed, Nov 17 | 10:13 AM" />
+
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/amount"
+            style="@style/Text_regular_14sp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_rupee_svg"
+            android:drawableLeft="@drawable/ic_rupee_svg"
+            android:drawablePadding="@dimen/_6dp"
+            android:maxLength="8"
+            android:maxLines="1"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/dateTime"
+            android:text="50000" />
+
+        <View
+            android:id="@+id/view3"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_1dp"
+            android:layout_marginTop="@dimen/_10dp"
+            android:background="@color/color_f1f1f1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/dateTime" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/pickUpLocation"
+            style="@style/Text_regular_14sp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_8dp"
+            android:gravity="start"
+            android:maxLines="2"
+            android:textAlignment="viewStart"
+            android:textColor="@color/color_7f7f7f"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/pending"
+            app:layout_constraintStart_toEndOf="@id/pickUpIcon"
+            app:layout_constraintTop_toBottomOf="@id/view3"
+            android:text=" New Delhi" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/pickUpIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@id/pickUpLocation"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/pickUpLocation"
+            app:srcCompat="@drawable/ic_pickup_green_svg" />
+
+        <View
+            android:id="@+id/dottedLine"
+            android:layout_width="@dimen/_1dp"
+            android:layout_height="@dimen/_0dp"
+            android:background="@color/color_f1f1f1"
+            app:layout_constraintBottom_toTopOf="@id/dropIcon"
+            app:layout_constraintEnd_toEndOf="@id/pickUpIcon"
+            app:layout_constraintStart_toStartOf="@id/pickUpIcon"
+            app:layout_constraintTop_toBottomOf="@id/pickUpIcon" />
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/dropIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@id/dropLocation"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/pickUpIcon"
+            app:layout_constraintTop_toTopOf="@id/dropLocation"
+            app:srcCompat="@drawable/ic_drop_red_svg" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/dropLocation"
+            style="@style/Text_regular_14sp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_8dp"
+            android:gravity="start"
+            android:maxLines="2"
+            android:textAlignment="viewStart"
+            android:textColor="@color/color_7f7f7f"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/pending"
+            app:layout_constraintStart_toEndOf="@id/dropIcon"
+            app:layout_constraintTop_toBottomOf="@id/pickUpLocation"
+            android:text=" Uttarakhand." />
+
+        <View
+            android:id="@+id/dottedLine1"
+            android:layout_width="@dimen/_0dp"
+            android:layout_height="@dimen/_2dp"
+            android:layout_marginTop="@dimen/_10dp"
+            android:background="@color/color_f1f1f1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/dropLocation" />
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/bookingBidRV"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/_3sdp"
+            android:layout_marginBottom="@dimen/_8dp"
+            android:orientation="vertical"
+            android:scrollbars="none"
+            android:visibility="visible"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toTopOf="@id/bidLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/dottedLine1"
+            app:reverseLayout="false"
+            tools:itemCount="5"
+            tools:listitem="@layout/layout_booking_receiver_bid"
+            tools:visibility="visible" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/bidLayout"
+            android:layout_width="@dimen/_0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5dp"
+            android:padding="@dimen/_5dp"
+            android:background="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/bookingBidRV">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/minusBid"
+                android:layout_width="wrap_content"
+                android:onClick="@{(v)->routeViewModel.onClick(v)}"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_minus_svg">
+
+            </androidx.appcompat.widget.AppCompatImageView>
+
+            <TextView
+                android:id="@+id/bidView"
+                android:layout_width="@dimen/_0dp"
+                android:layout_height="@dimen/_40dp"
+                android:layout_marginHorizontal="@dimen/_10dp"
+                android:background="@drawable/bg_light_orange_outline"
+                android:fontFamily="@font/opensans_regular"
+                android:gravity="center"
+                android:maxLines="10"
+                android:textAlignment="center"
+                android:textColor="@color/color_f9c22d"
+                android:textSize="15sp"
+                android:visibility="visible"
+                app:layout_constraintEnd_toStartOf="@id/plusBid"
+                app:layout_constraintStart_toEndOf="@id/minusBid"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="RtlCompat"
+                android:text="2500" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/plusBid"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_10dp"
+                android:onClick="@{(v)->routeViewModel.onClick(v)}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_add_svg">
+
+            </androidx.appcompat.widget.AppCompatImageView>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

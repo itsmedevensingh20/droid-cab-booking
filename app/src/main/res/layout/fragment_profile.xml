@@ -1,0 +1,735 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+
+        <variable
+            name="profileViewModel"
+            type="com.cabbooking.ui.profile.ProfileViewModel" />
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:fillViewport="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/bg_rectangular_white"
+            tools:context=".ui.profile.ProfileFragment">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/profileCV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_12dp"
+                android:layout_marginTop="@dimen/_10dp"
+                android:layout_marginEnd="@dimen/_12dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="@dimen/_6dp"
+                app:cardElevation="@dimen/_6dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/profilePic"
+                        android:layout_width="@dimen/_68dp"
+                        android:layout_height="@dimen/_68dp"
+                        android:layout_margin="@dimen/_10dp"
+                        android:scaleType="fitXY"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/ic_small_driver_circular_svg"
+                        tools:ignore="ImageContrastCheck" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/userName"
+                        style="@style/Text_semiBold_20sp"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_14dp"
+                        android:layout_marginLeft="@dimen/_14dp"
+                        android:layout_marginTop="@dimen/_10dp"
+                        android:layout_marginEnd="@dimen/_14dp"
+                        android:maxLines="1"
+                        android:singleLine="true"
+                        android:textColor="@color/black"
+                        android:visibility="visible"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/profilePic"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:text="@tools:sample/lorem/random" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/userNumber"
+                        style="@style/Text_regular_14sp"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/_6dp"
+                        android:layout_marginRight="@dimen/_6dp"
+                        android:gravity="start"
+                        android:maxLines="1"
+                        android:singleLine="true"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/color_989898"
+                        app:layout_constraintEnd_toStartOf="@id/editProfile"
+                        app:layout_constraintStart_toStartOf="@id/userName"
+                        app:layout_constraintTop_toBottomOf="@id/userName"
+                        tools:text="@tools:sample/lorem/random" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/userEmail"
+                        style="@style/Text_regular_14sp"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/_6dp"
+                        android:layout_marginRight="@dimen/_6dp"
+                        android:layout_marginBottom="@dimen/_10dp"
+                        android:gravity="start"
+                        android:maxLines="1"
+                        android:singleLine="true"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/color_989898"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/editProfile"
+                        app:layout_constraintStart_toStartOf="@id/userNumber"
+                        app:layout_constraintTop_toBottomOf="@id/userNumber"
+                        tools:text="@tools:sample/lorem/random" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/editProfile"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/_10dp"
+                        android:layout_marginRight="@dimen/_10dp"
+                        android:padding="@dimen/_2dp"
+                        app:layout_constraintBottom_toBottomOf="@id/userEmail"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:srcCompat="@drawable/ic_edit_profile_svg"
+                        tools:ignore="ImageContrastCheck" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/moneyText"
+                style="@style/Text_medium_14sp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_16dp"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:text="@string/money"
+                android:textColor="@color/black"
+                android:visibility="visible"
+                app:layout_constraintEnd_toEndOf="@id/profileCV"
+                app:layout_constraintStart_toStartOf="@id/profileCV"
+                app:layout_constraintTop_toBottomOf="@id/profileCV" />
+
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/balanceCV"
+                android:layout_width="@dimen/_0dp"
+                android:layout_height="@dimen/_42dp"
+                android:layout_marginTop="@dimen/_16dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="@dimen/_6dp"
+                app:cardElevation="@dimen/_6dp"
+                app:layout_constraintEnd_toEndOf="@id/profileCV"
+                app:layout_constraintStart_toStartOf="@id/profileCV"
+                app:layout_constraintTop_toBottomOf="@id/moneyText">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/balanceIcon"
+                        android:layout_width="@dimen/_20dp"
+                        android:layout_height="@dimen/_20dp"
+                        android:layout_margin="@dimen/_10dp"
+                        android:scaleType="fitXY"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/ic_rupee_icon_svg" />
+
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/balanceText"
+                        style="@style/Text_medium_14sp"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/_0dp"
+                        android:layout_marginStart="@dimen/_10dp"
+                        android:layout_marginLeft="@dimen/_10dp"
+                        android:layout_marginEnd="@dimen/_10dp"
+                        android:layout_marginRight="@dimen/_10dp"
+                        android:gravity="start|center_vertical"
+                        android:maxLines="1"
+                        android:singleLine="true"
+                        android:text="@string/balance"
+                        android:textAlignment="gravity"
+                        android:textColor="@color/color_7f7f7f"
+                        app:layout_constraintBottom_toBottomOf="@id/balanceIcon"
+                        app:layout_constraintEnd_toStartOf="@id/balance"
+                        app:layout_constraintStart_toEndOf="@id/balanceIcon"
+                        app:layout_constraintTop_toTopOf="@id/balanceIcon" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/balance"
+                        style="@style/Text_medium_14sp"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/_6dp"
+                        android:layout_marginRight="@dimen/_6dp"
+                        android:gravity="end"
+                        android:maxLines="1"
+                        android:singleLine="true"
+                        android:text="@string/rupees_symbol"
+                        android:textAlignment="viewEnd"
+                        android:textColor="@color/color_7f7f7f"
+                        app:layout_constraintBottom_toBottomOf="@id/balanceIcon"
+                        app:layout_constraintEnd_toStartOf="@id/updateText"
+                        app:layout_constraintTop_toTopOf="@id/balanceIcon"
+                        tools:ignore="TextContrastCheck"
+                        tools:text="$ 600" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/updateText"
+                        style="@style/Text_medium_14sp"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/_6dp"
+                        android:layout_marginRight="@dimen/_6dp"
+                        android:gravity="end"
+                        android:maxLines="1"
+                        android:singleLine="true"
+                        android:text="@string/update"
+                        android:textAlignment="viewEnd"
+                        android:textColor="@color/color_f9c22d"
+                        app:layout_constraintBottom_toBottomOf="@id/balanceIcon"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/balanceIcon"
+                        tools:ignore="TextContrastCheck" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/paymentCV"
+                android:layout_width="@dimen/_0dp"
+                android:layout_height="@dimen/_42dp"
+                android:layout_marginTop="@dimen/_16dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="@dimen/_6dp"
+                app:cardElevation="@dimen/_6dp"
+                app:layout_constraintEnd_toEndOf="@id/balanceCV"
+                app:layout_constraintStart_toStartOf="@id/balanceCV"
+                app:layout_constraintTop_toBottomOf="@id/balanceCV">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/paymentIcon"
+                        android:layout_width="@dimen/_20dp"
+                        android:layout_height="@dimen/_20dp"
+                        android:layout_margin="@dimen/_10dp"
+                        android:scaleType="fitXY"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/ic_payment_svg" />
+
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/paymentText"
+                        style="@style/Text_medium_14sp"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/_0dp"
+                        android:layout_marginStart="@dimen/_10dp"
+                        android:layout_marginEnd="@dimen/_10dp"
+                        android:layout_marginRight="@dimen/_10dp"
+                        android:gravity="start|center_vertical"
+                        android:maxLines="1"
+                        android:singleLine="true"
+                        android:text="@string/payment"
+                        android:textAlignment="gravity"
+                        android:textColor="@color/color_7f7f7f"
+                        app:layout_constraintBottom_toBottomOf="@id/paymentIcon"
+                        app:layout_constraintEnd_toStartOf="@id/paymentArrow"
+                        app:layout_constraintStart_toEndOf="@id/paymentIcon"
+                        app:layout_constraintTop_toTopOf="@id/paymentIcon" />
+
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/paymentArrow"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/_10dp"
+                        android:layout_marginRight="@dimen/_10dp"
+                        android:scaleType="fitXY"
+                        app:layout_constraintBottom_toBottomOf="@id/paymentIcon"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/paymentIcon"
+                        app:srcCompat="@drawable/ic_right_arrow_svg" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/bankCV"
+                android:layout_width="@dimen/_0dp"
+                android:layout_height="@dimen/_42dp"
+                android:layout_marginTop="@dimen/_16dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="@dimen/_6dp"
+                app:cardElevation="@dimen/_6dp"
+                app:layout_constraintEnd_toEndOf="@id/paymentCV"
+                app:layout_constraintStart_toStartOf="@id/paymentCV"
+                app:layout_constraintTop_toBottomOf="@id/paymentCV">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/bankIcon"
+                        android:layout_width="@dimen/_20dp"
+                        android:layout_height="@dimen/_20dp"
+                        android:layout_margin="@dimen/_10dp"
+                        android:scaleType="fitXY"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/ic_bank_svg" />
+
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/bankText"
+                        style="@style/Text_medium_14sp"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/_0dp"
+                        android:layout_marginStart="@dimen/_10dp"
+                        android:layout_marginEnd="@dimen/_10dp"
+                        android:layout_marginRight="@dimen/_10dp"
+                        android:gravity="start|center_vertical"
+                        android:maxLines="1"
+                        android:singleLine="true"
+                        android:text="@string/bank_details"
+                        android:textAlignment="gravity"
+                        android:textColor="@color/color_7f7f7f"
+                        app:layout_constraintBottom_toBottomOf="@id/bankIcon"
+                        app:layout_constraintEnd_toStartOf="@id/bankArrow"
+                        app:layout_constraintStart_toEndOf="@id/bankIcon"
+                        app:layout_constraintTop_toTopOf="@id/bankIcon" />
+
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/bankArrow"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/_10dp"
+                        android:layout_marginRight="@dimen/_10dp"
+                        android:scaleType="fitXY"
+                        app:layout_constraintBottom_toBottomOf="@id/bankIcon"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/bankIcon"
+                        app:srcCompat="@drawable/ic_right_arrow_svg" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/legalText"
+                style="@style/Text_medium_14sp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_16dp"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:text="@string/legal"
+                android:textColor="@color/black"
+                android:visibility="visible"
+                app:layout_constraintEnd_toEndOf="@id/bankCV"
+                app:layout_constraintStart_toStartOf="@id/bankCV"
+                app:layout_constraintTop_toBottomOf="@id/bankCV" />
+
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/aboutCV"
+                android:layout_width="@dimen/_0dp"
+                android:layout_height="@dimen/_42dp"
+                android:layout_marginTop="@dimen/_16dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="@dimen/_6dp"
+                app:cardElevation="@dimen/_6dp"
+                app:layout_constraintEnd_toEndOf="@id/legalText"
+                app:layout_constraintStart_toStartOf="@id/legalText"
+                app:layout_constraintTop_toBottomOf="@id/legalText">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/aboutIcon"
+                        android:layout_width="@dimen/_20dp"
+                        android:layout_height="@dimen/_20dp"
+                        android:layout_margin="@dimen/_10dp"
+                        android:scaleType="fitXY"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/ic_about_svg" />
+
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/aboutText"
+                        style="@style/Text_medium_14sp"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/_0dp"
+                        android:layout_marginStart="@dimen/_10dp"
+                        android:layout_marginEnd="@dimen/_10dp"
+                        android:layout_marginRight="@dimen/_10dp"
+                        android:gravity="start|center_vertical"
+                        android:maxLines="1"
+                        android:singleLine="true"
+                        android:text="@string/about"
+                        android:textAlignment="gravity"
+                        android:textColor="@color/color_7f7f7f"
+                        app:layout_constraintBottom_toBottomOf="@id/aboutIcon"
+                        app:layout_constraintEnd_toStartOf="@id/aboutArrow"
+                        app:layout_constraintStart_toEndOf="@id/aboutIcon"
+                        app:layout_constraintTop_toTopOf="@id/aboutIcon" />
+
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/aboutArrow"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/_10dp"
+                        android:layout_marginRight="@dimen/_10dp"
+                        android:scaleType="fitXY"
+                        app:layout_constraintBottom_toBottomOf="@id/aboutIcon"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/aboutIcon"
+                        app:srcCompat="@drawable/ic_right_arrow_svg" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/helpCV"
+                android:layout_width="@dimen/_0dp"
+                android:layout_height="@dimen/_42dp"
+                android:layout_marginTop="@dimen/_16dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="@dimen/_6dp"
+                app:cardElevation="@dimen/_6dp"
+                app:layout_constraintEnd_toEndOf="@id/aboutCV"
+                app:layout_constraintStart_toStartOf="@id/aboutCV"
+                app:layout_constraintTop_toBottomOf="@id/aboutCV">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/helpIcon"
+                        android:layout_width="@dimen/_20dp"
+                        android:layout_height="@dimen/_20dp"
+                        android:layout_margin="@dimen/_10dp"
+                        android:scaleType="fitXY"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/ic_help_svg" />
+
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/helpText"
+                        style="@style/Text_medium_14sp"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/_0dp"
+                        android:layout_marginStart="@dimen/_10dp"
+                        android:layout_marginEnd="@dimen/_10dp"
+                        android:layout_marginRight="@dimen/_10dp"
+                        android:gravity="start|center_vertical"
+                        android:maxLines="1"
+                        android:singleLine="true"
+                        android:text="@string/help"
+                        android:textAlignment="gravity"
+                        android:textColor="@color/color_7f7f7f"
+                        app:layout_constraintBottom_toBottomOf="@id/helpIcon"
+                        app:layout_constraintEnd_toStartOf="@id/helpArrow"
+                        app:layout_constraintStart_toEndOf="@id/helpIcon"
+                        app:layout_constraintTop_toTopOf="@id/helpIcon" />
+
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/helpArrow"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/_10dp"
+                        android:layout_marginRight="@dimen/_10dp"
+                        android:scaleType="fitXY"
+                        app:layout_constraintBottom_toBottomOf="@id/helpIcon"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/helpIcon"
+                        app:srcCompat="@drawable/ic_right_arrow_svg" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/termsCV"
+                android:layout_width="@dimen/_0dp"
+                android:layout_height="@dimen/_42dp"
+                android:layout_marginTop="@dimen/_16dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="@dimen/_6dp"
+                app:cardElevation="@dimen/_6dp"
+                app:layout_constraintEnd_toEndOf="@id/helpCV"
+                app:layout_constraintStart_toStartOf="@id/helpCV"
+                app:layout_constraintTop_toBottomOf="@id/helpCV">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/termsIcon"
+                        android:layout_width="@dimen/_20dp"
+                        android:layout_height="@dimen/_20dp"
+                        android:layout_margin="@dimen/_10dp"
+                        android:scaleType="fitXY"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/ic_terms_conditions_svg" />
+
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/termsText"
+                        style="@style/Text_medium_14sp"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/_0dp"
+                        android:layout_marginStart="@dimen/_10dp"
+                        android:layout_marginEnd="@dimen/_10dp"
+                        android:layout_marginRight="@dimen/_10dp"
+                        android:gravity="start|center_vertical"
+                        android:maxLines="1"
+                        android:singleLine="true"
+                        android:text="@string/terms_conditions"
+                        android:textAlignment="gravity"
+                        android:textColor="@color/color_7f7f7f"
+                        app:layout_constraintBottom_toBottomOf="@id/termsIcon"
+                        app:layout_constraintEnd_toStartOf="@id/termsArrow"
+                        app:layout_constraintStart_toEndOf="@id/termsIcon"
+                        app:layout_constraintTop_toTopOf="@id/termsIcon" />
+
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/termsArrow"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/_10dp"
+                        android:layout_marginRight="@dimen/_10dp"
+                        android:scaleType="fitXY"
+                        app:layout_constraintBottom_toBottomOf="@id/termsIcon"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/termsIcon"
+                        app:srcCompat="@drawable/ic_right_arrow_svg" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/dataCV"
+                android:layout_width="@dimen/_0dp"
+                android:layout_height="@dimen/_42dp"
+                android:layout_marginTop="@dimen/_16dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="@dimen/_6dp"
+                app:cardElevation="@dimen/_6dp"
+                app:layout_constraintEnd_toEndOf="@id/termsCV"
+                app:layout_constraintStart_toStartOf="@id/termsCV"
+                app:layout_constraintTop_toBottomOf="@id/termsCV">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/dataIcon"
+                        android:layout_width="@dimen/_20dp"
+                        android:layout_height="@dimen/_20dp"
+                        android:layout_margin="@dimen/_10dp"
+                        android:scaleType="fitXY"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/ic_data_svg" />
+
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/dataText"
+                        style="@style/Text_medium_14sp"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/_0dp"
+                        android:layout_marginStart="@dimen/_10dp"
+                        android:layout_marginEnd="@dimen/_10dp"
+                        android:layout_marginRight="@dimen/_10dp"
+                        android:gravity="start|center_vertical"
+                        android:maxLines="1"
+                        android:singleLine="true"
+                        android:text="@string/data"
+                        android:textAlignment="gravity"
+                        android:textColor="@color/color_7f7f7f"
+                        app:layout_constraintBottom_toBottomOf="@id/dataIcon"
+                        app:layout_constraintEnd_toStartOf="@id/dataArrow"
+                        app:layout_constraintStart_toEndOf="@id/dataIcon"
+                        app:layout_constraintTop_toTopOf="@id/dataIcon" />
+
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/dataArrow"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/_10dp"
+                        android:layout_marginRight="@dimen/_10dp"
+                        android:scaleType="fitXY"
+                        app:layout_constraintBottom_toBottomOf="@id/dataIcon"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/dataIcon"
+                        app:srcCompat="@drawable/ic_right_arrow_svg" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/ratingText"
+                style="@style/Text_medium_14sp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_16dp"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:text="@string/ratings"
+                android:textColor="@color/black"
+                android:visibility="visible"
+                app:layout_constraintEnd_toEndOf="@id/dataCV"
+                app:layout_constraintStart_toStartOf="@id/dataCV"
+                app:layout_constraintTop_toBottomOf="@id/dataCV" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/ratingCV"
+                android:layout_width="@dimen/_0dp"
+                android:layout_height="@dimen/_42dp"
+                android:layout_marginTop="@dimen/_16dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="@dimen/_6dp"
+                app:cardElevation="@dimen/_6dp"
+                app:layout_constraintEnd_toEndOf="@id/ratingText"
+                app:layout_constraintStart_toStartOf="@id/ratingText"
+                app:layout_constraintTop_toBottomOf="@id/ratingText">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/ratingIcon"
+                        android:layout_width="@dimen/_20dp"
+                        android:layout_height="@dimen/_20dp"
+                        android:layout_margin="@dimen/_10dp"
+                        android:scaleType="fitXY"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/ic_ratings_svg" />
+
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/ratingShowText"
+                        style="@style/Text_medium_14sp"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/_0dp"
+                        android:layout_marginStart="@dimen/_10dp"
+                        android:layout_marginEnd="@dimen/_10dp"
+                        android:layout_marginRight="@dimen/_10dp"
+                        android:gravity="start|center_vertical"
+                        android:maxLines="1"
+                        android:singleLine="true"
+                        android:text="@string/ratings"
+                        android:textAlignment="gravity"
+                        android:textColor="@color/color_7f7f7f"
+                        app:layout_constraintBottom_toBottomOf="@id/ratingIcon"
+                        app:layout_constraintEnd_toStartOf="@id/ratingArrow"
+                        app:layout_constraintStart_toEndOf="@id/ratingIcon"
+                        app:layout_constraintTop_toTopOf="@id/ratingIcon" />
+
+
+                    <RatingBar
+                        android:id="@+id/ratingArrow"
+                        style="@style/Custom_RatingBar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/_10dp"
+                        android:layout_marginRight="@dimen/_10dp"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:numStars="5"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/logoutBtn"
+                android:layout_width="@dimen/_0dp"
+                android:layout_height="@dimen/_50dp"
+                android:layout_marginTop="@dimen/_30dp"
+                android:layout_marginBottom="@dimen/_14dp"
+                android:background="@drawable/bg_pink_red_outline_2dp"
+                android:onClick="@{(v)->profileViewModel.onClick(v)}"
+                android:text="@string/title_logout"
+                android:textAllCaps="false"
+                android:textColor="@color/color_fe2929"
+                android:textSize="@dimen/_16sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@id/ratingCV"
+                app:layout_constraintStart_toStartOf="@id/ratingCV"
+                app:layout_constraintTop_toBottomOf="@id/ratingCV" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</layout>

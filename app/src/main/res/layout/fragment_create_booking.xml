@@ -1,0 +1,571 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="bookingViewModel"
+
+            type="com.cabbooking.ui.booking.BookingViewModel" />
+
+        <variable
+            name="isVender"
+            type="Boolean" />
+
+        <variable
+            name="isPickUpEnable"
+            type="Boolean" />
+
+        <variable
+            name="isDropEnable"
+            type="Boolean" />
+
+        <variable
+            name="isCityFound"
+            type="Boolean" />
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:fillViewport="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingHorizontal="@dimen/_14sdp">
+
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/crText"
+                style="@style/Text_semiBold_20sp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:text="@string/create_booking"
+                android:textColor="@color/black"
+                android:visibility="visible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/enquiryDate"
+                style="@style/Text_medium_14sp"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_50dp"
+                android:layout_marginTop="@dimen/_24dp"
+                android:background="@drawable/bg_rectangular_f2f2f2"
+                android:drawableEnd="@drawable/ic_drop_down_svg"
+                android:drawableRight="@drawable/ic_drop_down_svg"
+                android:gravity="center_vertical"
+                android:hint="@string/enquiry_date"
+                android:onClick="@{(v)->bookingViewModel.onClick(v)}"
+                android:padding="@dimen/_10dp"
+                android:textColor="@color/color_212121"
+                android:textColorHint="@color/color_7f7f7f"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/crText" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/bookingType"
+                style="@style/Text_medium_14sp"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_50dp"
+                android:layout_marginTop="@dimen/_20dp"
+                android:background="@drawable/bg_rectangular_f2f2f2"
+                android:drawableEnd="@drawable/ic_drop_down_svg"
+                android:drawableRight="@drawable/ic_drop_down_svg"
+                android:gravity="center_vertical"
+                android:hint="@string/booking_type"
+                android:onClick="@{(v)->bookingViewModel.onClick(v)}"
+                android:padding="@dimen/_10dp"
+                android:textColor="@color/color_212121"
+                android:textColorHint="@color/color_7f7f7f"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/enquiryDate" />
+
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/startDate"
+                style="@style/Text_medium_14sp"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_50dp"
+                android:layout_marginTop="@dimen/_20dp"
+                android:background="@drawable/bg_rectangular_f2f2f2"
+                android:drawableEnd="@drawable/ic_drop_down_svg"
+                android:drawableRight="@drawable/ic_drop_down_svg"
+                android:gravity="center_vertical"
+                android:hint="@string/select_starting_date"
+                android:onClick="@{(v)->bookingViewModel.onClick(v)}"
+                android:padding="@dimen/_10dp"
+                android:textColor="@color/color_212121"
+                android:textColorHint="@color/color_7f7f7f"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/bookingType" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/endDate"
+                style="@style/Text_medium_14sp"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_50dp"
+                android:layout_marginTop="@dimen/_20dp"
+                android:background="@drawable/bg_rectangular_f2f2f2"
+                android:drawableEnd="@drawable/ic_drop_down_svg"
+                android:drawableRight="@drawable/ic_drop_down_svg"
+                android:gravity="center_vertical"
+                android:hint="@string/select_end_date"
+                android:onClick="@{(v)->bookingViewModel.onClick(v)}"
+                android:padding="@dimen/_10dp"
+                android:textColor="@color/color_212121"
+                android:textColorHint="@color/color_7f7f7f"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/startDate" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/dummyCL"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/endDate">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/pickupText"
+                    style="@style/Text_regular_14sp"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="start"
+                    android:text="@string/pick_up"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/color_7f7f7f"
+                    android:visibility="@{isPickUpEnable ? View.VISIBLE:View.GONE , default = visible}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/pickupCityName"
+                    style="@style/EditText_medium_14sp"
+                    android:layout_marginTop="@dimen/_14dp"
+                    android:background="@drawable/bg_rectangular_f2f2f2"
+                    android:hint="@string/enter_pickup_location"
+                    android:imeOptions="actionNext"
+                    android:inputType="textCapSentences"
+                    android:padding="@dimen/_10dp"
+                    android:singleLine="true"
+                    android:visibility="@{isPickUpEnable ? View.VISIBLE:View.GONE , default = visible}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/pickupText" />
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/dropText"
+                    style="@style/Text_regular_14sp"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_20dp"
+                    android:gravity="start"
+                    android:text="@string/drop"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/color_7f7f7f"
+                    android:visibility="@{isDropEnable ? View.VISIBLE:View.GONE , default = visible}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/pickupCityName" />
+
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/dropCityName"
+                    style="@style/EditText_medium_14sp"
+                    android:layout_marginTop="@dimen/_14dp"
+                    android:background="@drawable/bg_rectangular_f2f2f2"
+                    android:hint="@string/enter_drop_location"
+                    android:imeOptions="actionNext"
+                    android:inputType="textCapSentences"
+                    android:padding="@dimen/_10dp"
+                    android:singleLine="true"
+                    android:visibility="@{isDropEnable ? View.VISIBLE:View.GONE , default = visible}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/dropText" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvStateList"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_200dp"
+                android:layout_marginTop="@dimen/_20dp"
+                android:orientation="vertical"
+                android:scrollbars="none"
+                android:visibility="gone"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/dummyCL"
+                app:reverseLayout="false"
+                tools:itemCount="2"
+                tools:listitem="@layout/layout_city_state_listing"
+                tools:visibility="visible" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/nameText"
+                style="@style/Text_regular_14sp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_20dp"
+                android:gravity="start"
+                android:text="@string/enter_name"
+                android:textAlignment="viewStart"
+                android:textColor="@color/color_7f7f7f"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/rvStateList" />
+
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/fullName"
+                style="@style/EditText_medium_14sp"
+                android:layout_marginTop="@dimen/_14dp"
+                android:background="@drawable/bg_rectangular_f2f2f2"
+                android:hint="@string/enter_full_name"
+                android:imeOptions="actionNext"
+                android:inputType="textCapSentences"
+                android:padding="@dimen/_10dp"
+                android:singleLine="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/nameText" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/numbText"
+                style="@style/Text_regular_14sp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_14dp"
+                android:gravity="start"
+                android:text="@string/enter_phone_number"
+                android:textAlignment="viewStart"
+                android:textColor="@color/color_7f7f7f"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/fullName" />
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/contactCL"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_50dp"
+                android:layout_marginTop="@dimen/_14dp"
+                android:background="@drawable/bg_rectangular_f2f2f2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/numbText">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/indFlag"
+                    android:layout_width="@dimen/_28sdp"
+                    android:layout_height="@dimen/_28sdp"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:layout_marginBottom="@dimen/_15sdp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/ccp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/flag" />
+
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/ccp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:layout_marginBottom="@dimen/_15sdp"
+                    android:fontFamily="@font/opensans_semi_bold"
+                    android:padding="@dimen/_10sdp"
+                    android:text="@string/_91"
+                    android:textColor="@color/color_212121"
+                    android:textSize="@dimen/_14sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/view"
+                    app:layout_constraintStart_toEndOf="@+id/indFlag"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <View
+                    android:id="@+id/view"
+                    android:layout_width="1dp"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:alpha="0.2"
+                    android:background="@color/black"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/ccp"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/mobileNumber"
+                    style="@style/EditText_medium_number_14sp"
+                    android:layout_height="0dp"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_marginLeft="@dimen/_5sdp"
+                    android:background="@null"
+                    android:gravity="center_vertical"
+                    android:hint="@string/enter_phone_number"
+                    android:imeOptions="actionDone"
+                    android:padding="@dimen/_10dp"
+                    android:text="@={bookingViewModel.mobileNumber}"
+                    android:textAlignment="gravity"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toEndOf="@id/view"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.538" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/cabType"
+                style="@style/Text_medium_14sp"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_50dp"
+                android:layout_marginTop="@dimen/_20dp"
+                android:background="@drawable/bg_rectangular_f2f2f2"
+                android:drawableEnd="@drawable/ic_drop_down_svg"
+                android:drawableRight="@drawable/ic_drop_down_svg"
+                android:gravity="center_vertical"
+                android:hint="@string/cab_type"
+                android:onClick="@{(v)->bookingViewModel.onClick(v)}"
+                android:padding="@dimen/_10dp"
+                android:textColor="@color/color_212121"
+                android:textColorHint="@color/color_7f7f7f"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/contactCL" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/numberOfPass"
+                style="@style/Text_medium_14sp"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_50dp"
+                android:layout_marginTop="@dimen/_20dp"
+                android:background="@drawable/bg_rectangular_f2f2f2"
+                android:drawableEnd="@drawable/ic_drop_down_svg"
+                android:drawableRight="@drawable/ic_drop_down_svg"
+                android:gravity="center_vertical"
+                android:hint="@string/number_of_passenger"
+                android:onClick="@{(v)->bookingViewModel.onClick(v)}"
+                android:padding="@dimen/_10dp"
+                android:textColor="@color/color_212121"
+                android:textColorHint="@color/color_7f7f7f"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cabType" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/status"
+                style="@style/Text_medium_14sp"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_50dp"
+                android:layout_marginTop="@dimen/_20dp"
+                android:background="@drawable/bg_rectangular_f2f2f2"
+                android:drawableEnd="@drawable/ic_drop_down_svg"
+                android:drawableRight="@drawable/ic_drop_down_svg"
+                android:gravity="center_vertical"
+                android:hint="@string/status"
+                android:onClick="@{(v)->bookingViewModel.onClick(v)}"
+                android:padding="@dimen/_10dp"
+                android:textColor="@color/color_212121"
+                android:textColorHint="@color/color_7f7f7f"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/numberOfPass" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/rateText"
+                style="@style/Text_regular_14sp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_14dp"
+                android:gravity="start"
+                android:text="@string/enter_rate"
+                android:textAlignment="viewStart"
+                android:textColor="@color/color_7f7f7f"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/status" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/fullRate"
+                style="@style/EditText_medium_14sp"
+                android:layout_marginTop="@dimen/_14dp"
+                android:background="@drawable/bg_rectangular_f2f2f2"
+                android:hint="@string/enter_rate"
+                android:imeOptions="actionNext"
+                android:inputType="phone"
+                android:digits="0123456789"
+                android:padding="@dimen/_10dp"
+                android:singleLine="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/rateText" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/advanceText"
+                style="@style/Text_regular_14sp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_14dp"
+                android:gravity="start"
+                android:text="@string/enter_advance_rate"
+                android:textAlignment="viewStart"
+                android:textColor="@color/color_7f7f7f"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/fullRate" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/advanceRate"
+                style="@style/EditText_medium_14sp"
+                android:layout_marginTop="@dimen/_14dp"
+                android:background="@drawable/bg_rectangular_f2f2f2"
+                android:hint="@string/enter_advance_rate"
+                android:imeOptions="actionNext"
+                android:inputType="phone"
+                android:digits="0123456789"
+                android:padding="@dimen/_10dp"
+                android:singleLine="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/advanceText" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/pendingText"
+                style="@style/Text_regular_14sp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_14dp"
+                android:gravity="start"
+                android:text="@string/enter_pending_rate"
+                android:textAlignment="viewStart"
+                android:textColor="@color/color_7f7f7f"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/advanceRate" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/pendingRate"
+                style="@style/EditText_medium_14sp"
+                android:layout_marginTop="@dimen/_14dp"
+                android:background="@drawable/bg_rectangular_f2f2f2"
+                android:hint="@string/enter_pending_rate"
+                android:imeOptions="actionNext"
+                android:inputType="phone"
+                android:digits="0123456789"
+                android:padding="@dimen/_10dp"
+                android:singleLine="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/pendingText" />
+
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/selectCab"
+                style="@style/Text_medium_14sp"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_50dp"
+                android:layout_marginTop="@dimen/_20dp"
+                android:background="@drawable/bg_rectangular_f2f2f2"
+                android:drawableEnd="@drawable/ic_drop_down_svg"
+                android:drawableRight="@drawable/ic_drop_down_svg"
+                android:gravity="center_vertical"
+                android:hint="@string/select_cab"
+                android:onClick="@{(v)->bookingViewModel.onClick(v)}"
+                android:padding="@dimen/_10dp"
+                android:textColor="@color/color_212121"
+                android:textColorHint="@color/color_7f7f7f"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/pendingRate" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/selectDriver"
+                style="@style/Text_medium_14sp"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_50dp"
+                android:layout_marginTop="@dimen/_20dp"
+                android:background="@drawable/bg_rectangular_f2f2f2"
+                android:drawableEnd="@drawable/ic_drop_down_svg"
+                android:drawableRight="@drawable/ic_drop_down_svg"
+                android:gravity="center_vertical"
+                android:hint="@string/select_driver"
+                android:onClick="@{(v)->bookingViewModel.onClick(v)}"
+                android:padding="@dimen/_10dp"
+                android:textColor="@color/color_212121"
+                android:textColorHint="@color/color_7f7f7f"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/selectCab" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/comment"
+                style="@style/EditText_medium_14sp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_15dp"
+                android:background="@drawable/bg_rectangular_f2f2f2"
+                android:fontFamily="@font/opensans_regular"
+                android:gravity="start"
+                android:hint="@string/please_write_comment_here"
+                android:imeOptions="actionNext"
+                android:importantForAutofill="no"
+                android:inputType="textMultiLine"
+                android:lineSpacingExtra="2sp"
+                android:lines="5"
+                android:maxLines="10"
+                android:padding="@dimen/_10dp"
+                android:scrollbars="vertical"
+                android:textCursorDrawable="@null"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/selectDriver"
+                tools:text="@tools:sample/lorem/random" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/createBookingBtn"
+                style="@style/ButtonGradientStyle"
+                android:layout_marginTop="@dimen/_20dp"
+                android:layout_marginBottom="@dimen/_14dp"
+                android:fontFamily="@font/poppins_medium"
+                android:onClick="@{(v)->bookingViewModel.onClick(v)}"
+                android:text="@string/create_booking"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/comment" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</layout>

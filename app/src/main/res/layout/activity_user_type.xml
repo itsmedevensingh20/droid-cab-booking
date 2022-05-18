@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="isVenderSelected"
+            type="Boolean" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:paddingHorizontal="@dimen/_10sdp"
+        tools:context=".activity.UserTypeActivity">
+
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/selectUserText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_50sdp"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="@string/select_user_type"
+            android:textColor="@color/color_212121"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/vender"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_40sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:elevation="2dp"
+            android:fontFamily="@font/poppins_semibold"
+            android:gravity="center"
+            android:paddingStart="@dimen/_15sdp"
+            android:paddingLeft="@dimen/_10sdp"
+            android:paddingEnd="@dimen/_10sdp"
+            android:text="@string/i_am_vender"
+            android:textAlignment="center"
+            android:textColor="@color/color_212121"
+            android:textSize="@dimen/_16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/selectUserText"
+            bind:setDrawableEnd="@{isVenderSelected?@drawable/check_tick:@drawable/uncheck}"
+            bind:setViewBackground="@{isVenderSelected?@drawable/bg_rectangular_grey:@drawable/bg_rectangular_white}"
+            tools:ignore="RtlCompat,RtlSymmetry"
+            tools:targetApi="lollipop" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/driver"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_30sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:elevation="2dp"
+            android:fontFamily="@font/poppins_semibold"
+            android:gravity="center"
+            android:paddingStart="@dimen/_15sdp"
+            android:paddingLeft="@dimen/_10sdp"
+            android:paddingEnd="@dimen/_10sdp"
+            android:text="@string/i_am_driver"
+            android:textAlignment="center"
+            android:textColor="@color/color_212121"
+            android:textSize="@dimen/_16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/vender"
+            bind:setDrawableEnd="@{isVenderSelected?@drawable/uncheck:@drawable/check_tick}"
+            bind:setViewBackground="@{isVenderSelected?@drawable/bg_rectangular_white:@drawable/bg_rectangular_grey}"
+            tools:ignore="RtlCompat,RtlSymmetry"
+            tools:targetApi="lollipop" />
+
+        <Button
+            android:id="@+id/continueBtn"
+            style="@style/ButtonGradientStyle"
+            android:layout_width="0dp"
+            android:layout_marginBottom="@dimen/_30sdp"
+            android:text="@string/continue_"
+            android:textAllCaps="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:targetApi="lollipop" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

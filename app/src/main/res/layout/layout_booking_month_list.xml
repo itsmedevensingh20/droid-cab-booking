@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:paddingHorizontal="@dimen/_4sdp"
+        android:paddingVertical="@dimen/_4sdp">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/month_year"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/opensans_bold"
+            android:maxLines="1"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_13sdp"
+            app:layout_constraintBottom_toTopOf="@id/dateBookingListRV"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="@tools:sample/lorem" />
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_2sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:alpha="0.3"
+            android:visibility="invisible"
+            android:background="@color/color_7D7D7D"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/month_year" />
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/dateBookingListRV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_2sdp"
+            android:orientation="vertical"
+            android:scrollbars="none"
+            android:visibility="visible"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/view"
+            app:reverseLayout="false"
+            tools:itemCount="2"
+            tools:listitem="@layout/layout_booking_date_list" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

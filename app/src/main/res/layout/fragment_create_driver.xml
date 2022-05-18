@@ -1,0 +1,400 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="isDriverImage"
+            type="Boolean" />
+
+        <variable
+            name="isDriverLicenceImage"
+            type="Boolean" />
+
+        <variable
+            name="driverViewModel"
+            type="com.cabbooking.ui.driver.DriverViewModel" />
+
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:fillViewport="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingHorizontal="@dimen/_14sdp">
+
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/crText"
+                style="@style/Text_semiBold_20sp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:text="@string/create_driver"
+                android:textColor="@color/black"
+                android:visibility="visible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/nameText"
+                style="@style/Text_regular_14sp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_24dp"
+                android:gravity="start"
+                android:text="@string/enter_name"
+                android:textAlignment="viewStart"
+                android:textColor="@color/color_7f7f7f"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/crText" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/fullName"
+                style="@style/EditText_medium_14sp"
+                android:layout_marginTop="@dimen/_14dp"
+                android:background="@drawable/bg_rectangular_f2f2f2"
+                android:hint="@string/enter_full_name"
+                android:imeOptions="actionNext"
+                android:inputType="textCapSentences"
+                android:padding="@dimen/_10dp"
+                android:singleLine="true"
+                android:text="@={driverViewModel.userName}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/nameText" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/numbText"
+                style="@style/Text_regular_14sp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_14dp"
+                android:gravity="start"
+                android:text="@string/enter_phone_number"
+                android:textAlignment="viewStart"
+                android:textColor="@color/color_7f7f7f"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/fullName" />
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/contactCL"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_50dp"
+                android:layout_marginTop="@dimen/_14dp"
+                android:background="@drawable/bg_rectangular_f2f2f2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/numbText">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/indFlag"
+                    android:layout_width="@dimen/_28sdp"
+                    android:layout_height="@dimen/_28sdp"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:layout_marginBottom="@dimen/_15sdp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/ccp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/flag" />
+
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/ccp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:layout_marginBottom="@dimen/_15sdp"
+                    android:fontFamily="@font/opensans_semi_bold"
+                    android:padding="@dimen/_10sdp"
+                    android:text="@string/_91"
+                    android:textColor="@color/color_212121"
+                    android:textSize="@dimen/_14sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/view"
+                    app:layout_constraintStart_toEndOf="@+id/indFlag"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <View
+                    android:id="@+id/view"
+                    android:layout_width="1dp"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:alpha="0.2"
+                    android:background="@color/black"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/ccp"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/mobileNumber"
+                    style="@style/EditText_medium_number_14sp"
+                    android:layout_height="0dp"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_marginLeft="@dimen/_5sdp"
+                    android:background="@null"
+                    android:gravity="center_vertical"
+                    android:hint="@string/enter_phone_number"
+                    android:imeOptions="actionDone"
+                    android:padding="@dimen/_10dp"
+                    android:text="@={driverViewModel.mobileNumber}"
+                    android:textAlignment="gravity"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toEndOf="@id/view"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.538" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/licenceLayoutText"
+                style="@style/Text_regular_14sp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_20dp"
+                android:gravity="start"
+                android:text="@string/licence_number"
+                android:textAlignment="viewStart"
+                android:textColor="@color/color_7f7f7f"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/contactCL" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/licenceNumber"
+                style="@style/EditText_medium_14sp"
+                android:layout_marginTop="@dimen/_14dp"
+                android:background="@drawable/bg_rectangular_f2f2f2"
+                android:hint="@string/enter_licence_number"
+                android:imeOptions="actionNext"
+                android:inputType="textCapWords"
+                android:maxLength="16"
+                android:padding="@dimen/_10dp"
+                android:singleLine="true"
+                android:text="@={driverViewModel.licenceNumber}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/licenceLayoutText" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/emailLayoutText"
+                style="@style/Text_regular_14sp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_20dp"
+                android:gravity="start"
+                android:text="@string/email_id"
+                android:textAlignment="viewStart"
+                android:textColor="@color/color_7f7f7f"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/licenceNumber" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/emailId"
+                style="@style/EditText_medium_14sp"
+                android:layout_marginTop="@dimen/_14dp"
+                android:background="@drawable/bg_rectangular_f2f2f2"
+                android:hint="@string/enter_email_id"
+                android:imeOptions="actionNext"
+                android:inputType="textEmailAddress"
+                android:maxLength="36"
+                android:padding="@dimen/_10dp"
+                android:singleLine="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/emailLayoutText" />
+
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/uploadDriverText"
+                style="@style/Text_medium_14sp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_14dp"
+                android:text="@string/upload_driver_image"
+                android:textColor="@color/color_7f7f7f"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/emailId" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/uploadDriverCl"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_160dp"
+                android:layout_marginTop="@dimen/_14dp"
+                android:background="@drawable/bg_white_black_outline"
+                android:onClick="@{(v)->driverViewModel.onClick(v)}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/uploadDriverText">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/uploadDriver"
+                    android:layout_width="@dimen/_220dp"
+                    android:layout_height="@dimen/_0dp"
+                    android:layout_margin="@dimen/_4dp"
+                    android:onClick="@{(v)->driverViewModel.onClick(v)}"
+                    android:scaleType="fitXY"
+                    android:visibility="@{isDriverImage ? View.VISIBLE : View.GONE,default =gone }"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_upload_photo_svg" />
+
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/uploadImg"
+                    android:layout_width="@dimen/_50dp"
+                    android:layout_height="@dimen/_50dp"
+                    android:layout_marginTop="@dimen/_24dp"
+                    android:scaleType="fitXY"
+                    android:visibility="@{isDriverImage ? View.GONE : View.VISIBLE,default =visible }"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_upload_photo_svg" />
+
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/uploadYourLicenceText"
+                    style="@style/Text_regular_14sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/upload_driver_image"
+                    android:textAlignment="center"
+                    android:textColor="@color/color_7f7f7f"
+                    android:textSize="@dimen/_12sp"
+                    android:visibility="@{isDriverImage ? View.GONE : View.VISIBLE,default =visible }"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/uploadDriver" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/uploadDriverDocsText"
+                style="@style/Text_medium_14sp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_14dp"
+                android:text="@string/upload_driver_licence"
+                android:textColor="@color/color_7f7f7f"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/uploadDriverCl" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/uploadDriverDocsCl"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_160dp"
+                android:layout_marginTop="@dimen/_14dp"
+                android:background="@drawable/bg_white_black_outline"
+                android:onClick="@{(v)->driverViewModel.onClick(v)}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/uploadDriverDocsText">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/uploadDriverDocs"
+                    android:layout_width="@dimen/_220dp"
+                    android:layout_height="@dimen/_0dp"
+                    android:layout_margin="@dimen/_4dp"
+                    android:onClick="@{(v)->driverViewModel.onClick(v)}"
+                    android:scaleType="fitXY"
+                    android:visibility="@{isDriverLicenceImage ? View.VISIBLE : View.GONE,default =gone }"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_upload_photo_svg" />
+
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/uploadDriverDocsDummy"
+                    android:layout_width="@dimen/_50dp"
+                    android:layout_height="@dimen/_50dp"
+                    android:layout_marginTop="@dimen/_24dp"
+                    android:scaleType="fitXY"
+                    android:visibility="@{isDriverLicenceImage ? View.GONE : View.VISIBLE,default =visible }"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_upload_photo_svg" />
+
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/uploadDriverDocsDummyText"
+                    style="@style/Text_regular_14sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/upload_driver_licence"
+                    android:textAlignment="center"
+                    android:textColor="@color/color_7f7f7f"
+                    android:textSize="@dimen/_12sp"
+                    android:visibility="@{isDriverLicenceImage ? View.GONE : View.VISIBLE,default =visible }"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/uploadDriverDocsDummy" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/active"
+                style="@style/Text_medium_14sp"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_50dp"
+                android:layout_marginTop="@dimen/_14dp"
+                android:layout_marginBottom="@dimen/_14dp"
+                android:background="@drawable/bg_rectangular_f2f2f2"
+                android:drawableEnd="@drawable/ic_drop_down_svg"
+                android:drawableRight="@drawable/ic_drop_down_svg"
+                android:gravity="center_vertical"
+                android:hint="@string/driver_status"
+                android:onClick="@{(v)->driverViewModel.onClick(v)}"
+                android:padding="@dimen/_10dp"
+                android:textColor="@color/color_212121"
+                android:textColorHint="@color/color_7f7f7f"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/uploadDriverDocsCl" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/createDriverBtn"
+                style="@style/ButtonGradientStyle"
+                android:layout_marginTop="@dimen/_20dp"
+                android:layout_marginBottom="@dimen/_14dp"
+                android:fontFamily="@font/poppins_medium"
+                android:onClick="@{(v)->driverViewModel.onClick(v)}"
+                android:text="@string/create_driver"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/active" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</layout>

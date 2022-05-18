@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_8dp"
+        android:background="@drawable/bg_rectangular_white_4dp"
+        android:elevation="@dimen/_1dp"
+        android:padding="@dimen/_6dp">
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/driverImage"
+            android:layout_width="@dimen/_90dp"
+            android:layout_height="@dimen/_90dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:srcCompat="@drawable/dzire" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginBottom="@dimen/_6sdp"
+            android:paddingHorizontal="@dimen/_6sdp"
+            android:paddingVertical="@dimen/_4sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/driverImage"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/vehicleCL1"
+                android:layout_width="@dimen/_110dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_6dp"
+                android:layout_marginRight="@dimen/_6dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/vehicleCL2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/driverNameText"
+                    style="@style/Text_regular_10sp"
+                    android:layout_width="@dimen/_0dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="start"
+                    android:maxLength="36"
+                    android:maxLines="1"
+                    android:text="@string/driver_name"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/color_7f7f7f"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/driverName"
+                    style="@style/Text_medium_12sp"
+                    android:layout_width="@dimen/_0dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="start"
+                    android:maxLines="1"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/black"
+                    app:layout_constraintBottom_toTopOf="@id/driverStatusText"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/driverNameText"
+                    tools:text="@string/driver_name" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/driverStatusText"
+                    style="@style/Text_regular_10sp"
+                    android:layout_width="@dimen/_0dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="start"
+                    android:maxLines="1"
+                    android:text="@string/driver_status"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/color_7f7f7f"
+                    app:layout_constraintBottom_toTopOf="@id/driverStatus"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/driverName"
+                    tools:text="@string/driver_status" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/driverStatus"
+                    style="@style/Text_medium_12sp"
+                    android:layout_width="@dimen/_0dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="start"
+                    android:maxLines="1"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/green_text"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@id/driverStatusText"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:text="Active" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <View
+                android:id="@+id/view1"
+                android:layout_width="@dimen/_1dp"
+                android:layout_height="@dimen/_26dp"
+                android:layout_marginStart="@dimen/_4dp"
+                android:layout_marginTop="@dimen/_4dp"
+                android:layout_marginEnd="@dimen/_4dp"
+                android:layout_marginBottom="@dimen/_4dp"
+                android:background="@color/color_f1f1f1"
+                app:layout_constraintBottom_toTopOf="@id/view2"
+                app:layout_constraintEnd_toStartOf="@id/vehicleCL2"
+                app:layout_constraintStart_toEndOf="@id/vehicleCL1"
+                app:layout_constraintTop_toTopOf="@id/vehicleCL1" />
+
+
+            <View
+                android:id="@+id/view2"
+                android:layout_width="@dimen/_1dp"
+                android:layout_height="@dimen/_26dp"
+                android:layout_marginTop="@dimen/_4dp"
+                android:layout_marginBottom="@dimen/_4dp"
+                android:background="@color/color_f1f1f1"
+                app:layout_constraintBottom_toBottomOf="@id/vehicleCL1"
+                app:layout_constraintEnd_toEndOf="@id/view1"
+                app:layout_constraintStart_toStartOf="@id/view1"
+                app:layout_constraintTop_toBottomOf="@id/view1" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/vehicleCL2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_6dp"
+                android:layout_marginLeft="@dimen/_6dp"
+                android:layout_marginEnd="@dimen/_6dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/vehicleCL1"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/licenceNumberText"
+                    style="@style/Text_regular_10sp"
+                    android:layout_width="@dimen/_0dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="start"
+                    android:maxLength="36"
+                    android:maxLines="1"
+                    android:text="@string/licence_number_hint"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/color_7f7f7f"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="Licence Number" />
+
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/licenceNumber"
+                    style="@style/Text_medium_12sp"
+                    android:layout_width="@dimen/_0dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="start"
+                    android:maxLines="1"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/black"
+                    app:layout_constraintEnd_toEndOf="@id/licenceNumberText"
+                    app:layout_constraintStart_toStartOf="@id/licenceNumberText"
+                    app:layout_constraintTop_toBottomOf="@id/licenceNumberText"
+                    tools:text="Licence Number" />
+
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/driverNumberText"
+                    style="@style/Text_regular_10sp"
+                    android:layout_width="@dimen/_0dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="start"
+                    android:maxLength="30"
+                    android:maxLines="1"
+                    android:text="@string/driver_number"
+                    android:textAlignment="textStart"
+                    app:layout_constraintBottom_toTopOf="@id/driverNumber"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/licenceNumber" />
+
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/driverNumber"
+                    style="@style/Text_medium_12sp"
+                    android:layout_width="@dimen/_0dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="start"
+                    android:maxLines="1"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/black"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@id/driverNumberText"
+                    app:layout_constraintStart_toStartOf="@id/driverNumberText"
+                    app:layout_constraintTop_toBottomOf="@id/driverNumberText"
+                    tools:text="1234567899" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <!--            <com.google.android.material.textview.MaterialTextView-->
+            <!--                android:id="@+id/driverRequestText"-->
+            <!--                style="@style/Text_regular_10sp"-->
+            <!--                android:layout_width="0dp"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:gravity="end"-->
+            <!--                android:maxLines="1"-->
+            <!--                android:text="Driver Request"-->
+            <!--                android:textAlignment="textEnd"-->
+            <!--                android:textColor="@color/color_7f7f7f"-->
+            <!--                app:layout_constraintEnd_toEndOf="parent"-->
+            <!--                app:layout_constraintTop_toTopOf="parent"-->
+            <!--                tools:text="Driver Request" />-->
+
+
+            <!--            <com.google.android.material.textview.MaterialTextView-->
+            <!--                android:id="@+id/driverRequest"-->
+            <!--                style="@style/Text_medium_12sp"-->
+            <!--                android:layout_width="@dimen/_0dp"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:gravity="end"-->
+            <!--                android:maxLines="1"-->
+            <!--                android:textAlignment="textEnd"-->
+            <!--                android:textColor="@color/green_text"-->
+            <!--                app:layout_constraintEnd_toEndOf="@+id/driverRequestText"-->
+            <!--                app:layout_constraintStart_toStartOf="@id/driverRequestText"-->
+            <!--                app:layout_constraintTop_toBottomOf="@id/driverRequestText"-->
+            <!--                tools:text="Approved" />-->
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

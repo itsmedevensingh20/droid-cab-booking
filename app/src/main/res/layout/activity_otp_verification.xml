@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="otpViewModelBinding"
+            type="com.cabbooking.ui.otpVerification.OtpVerificationViewModel" />
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/otpRoot"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:fillViewport="true"
+        tools:context=".ui.otpVerification.OtpVerificationActivity">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingHorizontal="@dimen/_10sdp">
+
+
+            <ImageView
+                android:id="@+id/backBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:onClick="@{(v)->otpViewModelBinding.onClick(v)}"
+                android:padding="@dimen/_5sdp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/back_button"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="ContentDescription" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/otpText"
+                style="@style/Text_semiBold_20sp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_40dp"
+                android:text="@string/otp_verification"
+                android:gravity="start"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/backBtn" />
+
+
+<!--            <com.google.android.material.textview.MaterialTextView-->
+<!--                android:id="@+id/otpText"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="@dimen/_50sdp"-->
+<!--                android:alpha="0.8"-->
+<!--                android:fontFamily="@font/opensans_semi_bold"-->
+<!--                android:text="@string/otp_verification"-->
+<!--                android:textColor="@color/black"-->
+<!--                android:textSize="18sp"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@+id/backBtn" />-->
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/otpText2"
+                style="@style/Text_regular_14sp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10dp"
+                android:gravity="start"
+                android:text="@string/enter_4_digit_verification_code_otp_sent_on_your_registered_mobile_number"
+                android:textAlignment="viewStart"
+                android:textColor="@color/color_7f7f7f"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/otpText" />
+
+<!--            <com.google.android.material.textview.MaterialTextView-->
+<!--                android:id="@+id/otpText2"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="@dimen/_10sdp"-->
+<!--                android:alpha="0.8"-->
+<!--                android:fontFamily="@font/opensans_regular"-->
+<!--                android:text="@string/enter_4_digit_verification_code_otp_sent_on_your_registered_mobile_number"-->
+<!--                android:textColor="@color/black"-->
+<!--                android:textSize="14sp"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@+id/otpText" />-->
+
+            <LinearLayout
+                android:id="@+id/llContainer"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_70sdp"
+                android:layout_marginTop="@dimen/_25sdp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/otpText2">
+
+                <EditText
+                    android:id="@+id/etOtp1"
+                    style="@style/OtpEditTextStyle"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:elevation="@dimen/_4sdp"
+                    android:importantForAutofill="no"
+                    android:inputType="number"
+                    android:nextFocusRight="@id/etOtp2"
+                    android:text="@={otpViewModelBinding.otp1}"
+                    tools:ignore="LabelFor"
+                    tools:targetApi="lollipop" />
+
+                <EditText
+                    android:id="@+id/etOtp2"
+                    style="@style/OtpEditTextStyle"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:elevation="@dimen/_4sdp"
+                    android:importantForAutofill="no"
+                    android:inputType="number"
+                    android:nextFocusLeft="@id/etOtp1"
+                    android:nextFocusRight="@id/etOtp3"
+                    android:text="@={otpViewModelBinding.otp2}"
+                    tools:ignore="LabelFor"
+                    tools:targetApi="lollipop" />
+
+                <EditText
+                    android:id="@+id/etOtp3"
+                    style="@style/OtpEditTextStyle"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:elevation="@dimen/_4sdp"
+                    android:importantForAutofill="no"
+                    android:inputType="number"
+                    android:nextFocusLeft="@id/etOtp2"
+                    android:nextFocusRight="@id/etOtp4"
+                    android:text="@={otpViewModelBinding.otp3}"
+                    tools:ignore="LabelFor"
+                    tools:targetApi="lollipop" />
+
+                <EditText
+                    android:id="@+id/etOtp4"
+                    style="@style/OtpEditTextStyle"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:elevation="@dimen/_4sdp"
+                    android:importantForAutofill="no"
+                    android:inputType="number"
+                    android:nextFocusLeft="@id/etOtp3"
+                    android:text="@={otpViewModelBinding.otp4}"
+                    tools:ignore="LabelFor"
+                    tools:targetApi="lollipop" />
+            </LinearLayout>
+
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/sendAgainTextDummy"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:fontFamily="@font/opensans_semi_bold"
+                android:gravity="center"
+                android:padding="@dimen/_5sdp"
+                android:text="@string/did_not_receive_otp"
+                android:textAlignment="viewStart"
+                android:textColor="@color/color_7f7f7f"
+                android:textSize="15sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/llContainer"
+                tools:ignore="RtlCompat" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/sendAgainText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:clickable="false"
+                android:enabled="false"
+                android:fontFamily="@font/opensans_semi_bold"
+                android:gravity="center"
+                android:onClick="@{(v)->otpViewModelBinding.onClick(v)}"
+                android:padding="@dimen/_5sdp"
+                android:text="@string/send_again"
+                android:textAlignment="viewStart"
+                android:textAllCaps="true"
+                android:textColor="@color/color_212121"
+                android:textSize="@dimen/_16sp"
+                app:layout_constraintBottom_toBottomOf="@id/sendAgainTextDummy"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/llContainer"
+                app:layout_constraintTop_toTopOf="@id/sendAgainTextDummy"
+                tools:ignore="RtlCompat" />
+
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/timeText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:fontFamily="@font/opensans_bold"
+                android:gravity="center"
+                android:text="00:00"
+                android:textAlignment="viewStart"
+                android:textColor="@color/color_f9c22d"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toTopOf="@id/otpBtn"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/sendAgainTextDummy"
+                tools:ignore="RtlCompat" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/otpBtn"
+                style="@style/ButtonGradientStyle"
+                android:layout_marginBottom="@dimen/_20sdp"
+                android:onClick="@{(v)->otpViewModelBinding.onClick(v)}"
+                android:text="@string/done"
+                android:textAllCaps="true"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                 />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

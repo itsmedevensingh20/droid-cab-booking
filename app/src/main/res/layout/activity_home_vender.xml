@@ -1,0 +1,367 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="homeVenderViewModel"
+            type="com.cabbooking.ui.more.MainViewModel" />
+
+        <variable
+            name="isSheetExpanded"
+            type="Boolean" />
+
+        <variable
+            name="isBooking"
+            type="Boolean" />
+
+        <variable
+            name="isDriver"
+            type="Boolean" />
+
+        <variable
+            name="isCab"
+            type="Boolean" />
+
+        <variable
+            name="isRoute"
+            type="Boolean" />
+
+        <variable
+            name="isMore"
+            type="Boolean" />
+
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:animateLayoutChanges="true"
+        android:background="@color/white">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layoutCL"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/toolbarCl"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_110dp"
+                    android:background="@drawable/bg_yellow_half_rounded_bottom"
+                    android:elevation="@dimen/_2dp"
+                    android:paddingHorizontal="@dimen/_10dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/logo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/_16dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:srcCompat="@drawable/ic_faastr_logo_small_svg">
+
+                    </androidx.appcompat.widget.AppCompatImageView>
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/filter"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/_16dp"
+                        android:onClick="@{(v)->homeVenderViewModel.onClick(v)}"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:srcCompat="@drawable/ic_filter_svg">
+
+                    </androidx.appcompat.widget.AppCompatImageView>
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                <androidx.fragment.app.FragmentContainerView
+                    android:id="@+id/frame_home_vender"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="@dimen/_10dp"
+                    app:defaultNavHost="true"
+                    app:layout_constraintBottom_toTopOf="@id/nav_view"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/toolbarCl"
+                    app:navGraph="@navigation/mobile_navigation" />
+
+<!--                <com.google.android.material.floatingactionbutton.FloatingActionButton-->
+<!--                    android:id="@+id/fab3"-->
+<!--                    android:layout_width="@dimen/_40sdp"-->
+<!--                    android:layout_height="@dimen/_40sdp"-->
+<!--                    android:layout_marginEnd="@dimen/_16sdp"-->
+<!--                    android:layout_marginRight="@dimen/_16sdp"-->
+<!--                    android:tint="@android:color/white"-->
+<!--                    android:visibility="gone"-->
+<!--                    app:backgroundTint="@color/color_f9c22d"-->
+<!--                    app:layout_constraintBottom_toTopOf="@id/fab2"-->
+<!--                    app:layout_constraintEnd_toEndOf="parent"-->
+<!--                    app:srcCompat="@drawable/route"-->
+<!--                    tools:ignore="ContentDescription" />-->
+
+<!--                <com.google.android.material.floatingactionbutton.FloatingActionButton-->
+<!--                    android:id="@+id/fab2"-->
+<!--                    android:layout_width="@dimen/_40sdp"-->
+<!--                    android:layout_height="@dimen/_40sdp"-->
+<!--                    android:layout_marginEnd="@dimen/_16sdp"-->
+<!--                    android:layout_marginRight="@dimen/_16sdp"-->
+<!--                    android:tint="@android:color/white"-->
+<!--                    android:visibility="gone"-->
+<!--                    app:backgroundTint="@color/color_f9c22d"-->
+<!--                    app:layout_constraintBottom_toTopOf="@id/fab1"-->
+<!--                    app:layout_constraintEnd_toEndOf="parent"-->
+<!--                    app:srcCompat="@drawable/driver"-->
+<!--                    tools:ignore="ContentDescription" />-->
+
+<!--                <com.google.android.material.floatingactionbutton.FloatingActionButton-->
+<!--                    android:id="@+id/fab1"-->
+<!--                    android:layout_width="@dimen/_40sdp"-->
+<!--                    android:layout_height="@dimen/_40sdp"-->
+<!--                    android:layout_marginEnd="@dimen/_16sdp"-->
+<!--                    android:layout_marginRight="@dimen/_16sdp"-->
+<!--                    android:tint="@android:color/white"-->
+<!--                    android:visibility="gone"-->
+<!--                    app:backgroundTint="@color/color_f9c22d"-->
+<!--                    app:layout_constraintBottom_toTopOf="@id/createBooking"-->
+<!--                    app:layout_constraintEnd_toEndOf="parent"-->
+<!--                    app:srcCompat="@drawable/car"-->
+<!--                    tools:ignore="ContentDescription" />-->
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/createFB"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/_16dp"
+                    android:layout_marginRight="@dimen/_16dp"
+                    android:layout_marginBottom="@dimen/_16dp"
+                    android:text="@string/create_booking"
+                    android:textSize="@dimen/_12sp"
+                    android:onClick="@{(v)->homeVenderViewModel.onClick(v)}"
+                    android:tint="@android:color/white"
+                    android:visibility="@{isSheetExpanded ? View.GONE:View.VISIBLE , default = visible}"
+                    app:backgroundTint="@color/color_f9c22d"
+                    app:layout_constraintBottom_toTopOf="@id/nav_view"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    tools:ignore="ContentDescription" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/nav_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_76dp"
+                    android:background="@drawable/bg_white_rounded_bottom_sheet"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent">
+
+                    <!--            <View-->
+                    <!--                android:id="@+id/viewBooking"-->
+                    <!--                android:layout_width="0dp"-->
+                    <!--                android:layout_height="@dimen/_2sdp"-->
+                    <!--                android:background="@{isBooking? @color/white:@color/colorBlue,default = @color/colorBlue }"-->
+                    <!--                android:visibility="@{isBooking ? View.VISIBLE:View.GONE , default = visible}"-->
+                    <!--                app:layout_constraintBottom_toTopOf="@id/bookingNav"-->
+                    <!--                app:layout_constraintEnd_toEndOf="@id/bookingNav"-->
+                    <!--                app:layout_constraintStart_toStartOf="@id/bookingNav"-->
+                    <!--                app:layout_constraintTop_toTopOf="parent" />-->
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/bookingNav"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/_56dp"
+                        android:background="@null"
+                        android:drawableTop="@{isBooking ?@drawable/ic_booking_select_svg:@drawable/ic_booking_unselect_svg,default=@drawable/ic_booking_select_svg}"
+                        android:fontFamily="@font/opensans_bold"
+                        android:gravity="center"
+                        android:onClick="@{(v)->homeVenderViewModel.onClick(v)}"
+                        android:text="@string/title_booking"
+                        android:textAlignment="center"
+                        android:textColor="@{isBooking? @color/color_f9c22d:@color/color_7f7f7f,default = @color/color_f9c22d }"
+                        android:textSize="@dimen/_10sdp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/cabNav"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <!--            <View-->
+                    <!--                android:id="@+id/cabBooking"-->
+                    <!--                android:layout_width="0dp"-->
+                    <!--                android:layout_height="@dimen/_2sdp"-->
+                    <!--                android:background="@{isCab? @color/white:@color/colorBlue,default = @color/colorBlue }"-->
+                    <!--                android:visibility="@{isCab ? View.VISIBLE:View.GONE, default = visible}"-->
+                    <!--                app:layout_constraintBottom_toTopOf="@id/cabNav"-->
+                    <!--                app:layout_constraintEnd_toEndOf="@id/cabNav"-->
+                    <!--                app:layout_constraintStart_toStartOf="@id/cabNav"-->
+                    <!--                app:layout_constraintTop_toTopOf="parent" />-->
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/cabNav"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/_56dp"
+                        android:background="@null"
+                        android:drawableTop="@{isCab ?@drawable/ic_cab_select_svg:@drawable/ic_cab_unselect_svg,default=@drawable/ic_cab_unselect_svg}"
+                        android:fontFamily="@font/opensans_bold"
+                        android:gravity="center"
+                        android:onClick="@{(v)->homeVenderViewModel.onClick(v)}"
+                        android:text="@string/title_cab"
+                        android:textAlignment="center"
+                        android:textColor="@{isCab? @color/color_f9c22d:@color/color_7f7f7f,default = @color/color_7f7f7f }"
+                        android:textSize="@dimen/_10sdp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/driverNav"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toEndOf="@+id/bookingNav"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <!--            <View-->
+                    <!--                android:id="@+id/driverBooking"-->
+                    <!--                android:layout_width="0dp"-->
+                    <!--                android:layout_height="@dimen/_2sdp"-->
+                    <!--                android:background="@{isDriver? @color/white:@color/colorBlue,default = @color/colorBlue }"-->
+                    <!--                android:visibility="@{isDriver ? View.VISIBLE:View.GONE , default = visible}"-->
+                    <!--                app:layout_constraintBottom_toTopOf="@id/driverNav"-->
+                    <!--                app:layout_constraintEnd_toEndOf="@id/driverNav"-->
+                    <!--                app:layout_constraintStart_toStartOf="@id/driverNav"-->
+                    <!--                app:layout_constraintTop_toTopOf="parent" />-->
+
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/driverNav"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/_56dp"
+                        android:background="@null"
+                        android:drawableTop="@{isDriver ?@drawable/ic_driver_unselect_svg:@drawable/ic_driver_unselect_svg,default=@drawable/ic_driver_unselect_svg}"
+                        android:fontFamily="@font/opensans_bold"
+                        android:gravity="center"
+                        android:onClick="@{(v)->homeVenderViewModel.onClick(v)}"
+                        android:text="@string/title_driver"
+                        android:textAlignment="center"
+                        android:textColor="@{isDriver? @color/color_f9c22d:@color/color_7f7f7f,default = @color/color_7f7f7f }"
+                        android:textSize="@dimen/_10sdp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/routeNav"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toEndOf="@+id/cabNav"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <!--            <View-->
+                    <!--                android:id="@+id/routeBooking"-->
+                    <!--                android:layout_width="0dp"-->
+                    <!--                android:layout_height="@dimen/_2sdp"-->
+                    <!--                android:background="@{isRoute ? @color/white:@color/colorBlue,default = @color/colorBlue }"-->
+                    <!--                android:visibility="@{isRoute ? View.VISIBLE:View.GONE , default = visible}"-->
+                    <!--                app:layout_constraintBottom_toTopOf="@id/routeNav"-->
+                    <!--                app:layout_constraintEnd_toEndOf="@id/routeNav"-->
+                    <!--                app:layout_constraintStart_toStartOf="@id/routeNav"-->
+                    <!--                app:layout_constraintTop_toTopOf="parent" />-->
+
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/routeNav"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/_56dp"
+                        android:background="@null"
+                        android:drawableTop="@{isRoute ? @drawable/ic_route_unselect_svg:@drawable/ic_route_unselect_svg,default=@drawable/ic_route_unselect_svg}"
+                        android:fontFamily="@font/opensans_bold"
+                        android:gravity="center"
+                        android:onClick="@{(v)->homeVenderViewModel.onClick(v)}"
+                        android:text="@string/title_route"
+                        android:textAlignment="center"
+                        android:textColor="@{isRoute? @color/color_f9c22d:@color/color_7f7f7f,default = @color/color_7f7f7f }"
+                        android:textSize="@dimen/_10sdp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/moreNav"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toEndOf="@+id/driverNav"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <!--            <View-->
+                    <!--                android:id="@+id/moreBooking"-->
+                    <!--                android:layout_width="0dp"-->
+                    <!--                android:layout_height="@dimen/_2sdp"-->
+                    <!--                android:background="@{isMore? @color/white:@color/colorBlue,default = @color/colorBlue }"-->
+                    <!--                android:visibility="@{isMore ? View.VISIBLE:View.GONE , default = visible}"-->
+                    <!--                app:layout_constraintBottom_toTopOf="@id/moreNav"-->
+                    <!--                app:layout_constraintEnd_toEndOf="@id/moreNav"-->
+                    <!--                app:layout_constraintStart_toStartOf="@id/moreNav"-->
+                    <!--                app:layout_constraintTop_toTopOf="parent" />-->
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/moreNav"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/_56dp"
+                        android:background="@null"
+                        android:drawableTop="@{isMore ? @drawable/ic_more_unselect_svg:@drawable/ic_more_unselect_svg,default=@drawable/ic_more_unselect_svg}"
+                        android:fontFamily="@font/opensans_bold"
+                        android:gravity="center"
+                        android:onClick="@{(v)->homeVenderViewModel.onClick(v)}"
+                        android:text="@string/title_more"
+                        android:textAlignment="center"
+                        android:textColor="@{isMore? @color/color_f9c22d:@color/color_7f7f7f,default = @color/color_7f7f7f }"
+                        android:textSize="@dimen/_10sdp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toEndOf="@+id/routeNav"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <FrameLayout
+            android:id="@+id/frameFilter"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:defaultNavHost="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:navGraph="@navigation/mobile_navigation" />
+
+
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <FrameLayout
+                android:id="@+id/bottom_sheet_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:behavior_hideable="true"
+                app:behavior_peekHeight="0dp"
+                app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
+                <include
+                    android:id="@+id/layout_bottom_sheet"
+                    layout="@layout/layout_bottom_sheet"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </FrameLayout>
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

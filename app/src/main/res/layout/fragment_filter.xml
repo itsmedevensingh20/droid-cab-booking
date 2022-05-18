@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="filterViewModel"
+            type="com.cabbooking.ui.booking.BookingViewModel" />
+
+        <variable
+            name="isComing7daysText"
+            type="Boolean" />
+
+        <variable
+            name="isComing15daysText"
+            type="Boolean" />
+
+        <variable
+            name="isComing30daysText"
+            type="Boolean" />
+
+        <variable
+            name="isLast7daysText"
+            type="Boolean" />
+
+        <variable
+            name="isLast15daysText"
+            type="Boolean" />
+
+        <variable
+            name="isLast30daysText"
+            type="Boolean" />
+
+        <variable
+            name="isCustomText"
+            type="Boolean" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        tools:context=".ui.filter.FilterActivity">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/toolbarCl"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_110dp"
+            android:background="@drawable/bg_yellow_half_rounded_bottom"
+            android:elevation="@dimen/_2dp"
+            android:paddingHorizontal="@dimen/_10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/backBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_16dp"
+                android:onClick="@{(v)->filterViewModel.onClick(v)}"
+                android:padding="@dimen/_6dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:srcCompat="@drawable/ic_back_svg">
+
+            </androidx.appcompat.widget.AppCompatImageView>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/headingText"
+                style="@style/Text_medium_16sp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10dp"
+                android:layout_marginLeft="@dimen/_10dp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:text="@string/filter"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toBottomOf="@id/backBtn"
+                app:layout_constraintStart_toEndOf="@id/backBtn"
+                app:layout_constraintTop_toTopOf="@id/backBtn" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/frameCL"
+            android:layout_width="@dimen/_0dp"
+            android:layout_height="@dimen/_0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/toolbarCl">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/daysCL"
+                android:layout_width="@dimen/_150dp"
+                android:layout_height="match_parent"
+                android:background="@color/color_FFFCF4"
+                android:paddingVertical="@dimen/_10dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/coming7daysText"
+                    style="@style/Text_medium_14sp"
+                    android:layout_width="@dimen/_0dp"
+                    android:layout_height="@dimen/_44dp"
+                    android:background="@{isComing7daysText ? @color/white : @color/color_FFFCF4 , default = @color/color_FFFCF4 }"
+                    android:gravity="center_vertical"
+                    android:onClick="@{(v)->filterViewModel.onClick(v)}"
+                    android:paddingHorizontal="@dimen/_10dp"
+                    android:text="@string/coming_7_days"
+                    android:textColor="@{isComing7daysText ? @color/black : @color/color_f9c22d , default = @color/color_f9c22d}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/coming15daysText"
+                    style="@style/Text_medium_14sp"
+                    android:layout_width="@dimen/_0dp"
+                    android:layout_height="@dimen/_44dp"
+                    android:layout_marginTop="@dimen/_6dp"
+                    android:background="@{isComing15daysText ? @color/white : @color/color_FFFCF4 , default = @color/color_FFFCF4 }"
+                    android:gravity="center_vertical"
+                    android:onClick="@{(v)->filterViewModel.onClick(v)}"
+                    android:paddingHorizontal="@dimen/_10dp"
+                    android:text="@string/coming_15_days"
+                    android:textColor="@{isComing15daysText ? @color/black : @color/color_f9c22d , default = @color/color_f9c22d}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/coming7daysText" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/coming30daysText"
+                    style="@style/Text_medium_14sp"
+                    android:layout_width="@dimen/_0dp"
+                    android:layout_height="@dimen/_44dp"
+                    android:layout_marginTop="@dimen/_6dp"
+                    android:background="@{isComing30daysText ? @color/white : @color/color_FFFCF4 , default = @color/color_FFFCF4 }"
+                    android:gravity="center_vertical"
+                    android:onClick="@{(v)->filterViewModel.onClick(v)}"
+                    android:paddingHorizontal="@dimen/_10dp"
+                    android:text="@string/coming_30_days"
+                    android:textColor="@{isComing30daysText ? @color/black : @color/color_f9c22d , default = @color/color_f9c22d}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/coming15daysText" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/last7daysText"
+                    style="@style/Text_medium_14sp"
+                    android:layout_width="@dimen/_0dp"
+                    android:layout_height="@dimen/_44dp"
+                    android:layout_marginTop="@dimen/_6dp"
+                    android:background="@{isLast7daysText ? @color/white : @color/color_FFFCF4 , default = @color/color_FFFCF4 }"
+                    android:gravity="center_vertical"
+                    android:onClick="@{(v)->filterViewModel.onClick(v)}"
+                    android:paddingHorizontal="@dimen/_10dp"
+                    android:text="@string/last_7_days"
+                    android:textColor="@{isLast7daysText ? @color/black : @color/color_f9c22d , default = @color/color_f9c22d}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/coming30daysText" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/last15daysText"
+                    style="@style/Text_medium_14sp"
+                    android:layout_width="@dimen/_0dp"
+                    android:layout_height="@dimen/_44dp"
+                    android:layout_marginTop="@dimen/_6dp"
+                    android:background="@{isLast15daysText ? @color/white : @color/color_FFFCF4 , default = @color/color_FFFCF4 }"
+                    android:gravity="center_vertical"
+                    android:onClick="@{(v)->filterViewModel.onClick(v)}"
+                    android:paddingHorizontal="@dimen/_10dp"
+                    android:text="@string/last_15_days"
+                    android:textColor="@{isLast15daysText ? @color/black : @color/color_f9c22d , default = @color/color_f9c22d}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/last7daysText" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/last30daysText"
+                    style="@style/Text_medium_14sp"
+                    android:layout_width="@dimen/_0dp"
+                    android:layout_height="@dimen/_44dp"
+                    android:layout_marginTop="@dimen/_6dp"
+                    android:background="@{isLast30daysText ? @color/white : @color/color_FFFCF4 , default = @color/color_FFFCF4 }"
+                    android:gravity="center_vertical"
+                    android:onClick="@{(v)->filterViewModel.onClick(v)}"
+                    android:paddingHorizontal="@dimen/_10dp"
+                    android:text="@string/last_30_days"
+                    android:textColor="@{isLast30daysText ? @color/black : @color/color_f9c22d , default = @color/color_f9c22d}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/last15daysText" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/customText"
+                    style="@style/Text_medium_14sp"
+                    android:layout_width="@dimen/_0dp"
+                    android:layout_height="@dimen/_44dp"
+                    android:layout_marginTop="@dimen/_6dp"
+                    android:background="@{isCustomText ? @color/white : @color/color_FFFCF4 , default = @color/color_FFFCF4 }"
+                    android:drawableEnd="@drawable/ic_calendar_svg"
+                    android:drawableRight="@drawable/ic_calendar_svg"
+                    android:drawablePadding="@dimen/_6dp"
+                    android:gravity="center_vertical"
+                    android:onClick="@{(v)->filterViewModel.onClick(v)}"
+                    android:paddingHorizontal="@dimen/_10dp"
+                    android:text="@string/custom"
+                    android:textColor="@{isCustomText ? @color/black : @color/color_f9c22d , default = @color/color_f9c22d}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/last30daysText" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.appcompat.widget.AppCompatCheckBox
+                android:id="@+id/confirmed"
+                style="@style/Text_regular_14sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_30dp"
+                android:layout_marginLeft="@dimen/_30dp"
+                android:layout_marginTop="@dimen/_10dp"
+                android:button="@drawable/custom_filter_checkbox"
+                android:padding="@dimen/_6dp"
+                android:text="@string/confirmed"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toEndOf="@id/daysCL"
+                app:layout_constraintTop_toTopOf="parent">
+
+            </androidx.appcompat.widget.AppCompatCheckBox>
+
+            <androidx.appcompat.widget.AppCompatCheckBox
+                android:id="@+id/pending"
+                style="@style/Text_regular_14sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_30dp"
+                android:layout_marginLeft="@dimen/_30dp"
+                android:layout_marginTop="@dimen/_10dp"
+                android:button="@drawable/custom_filter_checkbox"
+                android:padding="@dimen/_6dp"
+                android:text="@string/pending"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toEndOf="@id/daysCL"
+                app:layout_constraintTop_toBottomOf="@id/confirmed">
+
+            </androidx.appcompat.widget.AppCompatCheckBox>
+
+            <androidx.appcompat.widget.AppCompatCheckBox
+                android:id="@+id/notConfirmed"
+                style="@style/Text_regular_14sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_30dp"
+                android:layout_marginLeft="@dimen/_30dp"
+                android:layout_marginTop="@dimen/_10dp"
+                android:button="@drawable/custom_filter_checkbox"
+                android:padding="@dimen/_6dp"
+                android:text="@string/not_confirmed"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toEndOf="@id/daysCL"
+                app:layout_constraintTop_toBottomOf="@id/pending">
+
+            </androidx.appcompat.widget.AppCompatCheckBox>
+
+            <androidx.appcompat.widget.AppCompatCheckBox
+                android:id="@+id/cancel"
+                style="@style/Text_regular_14sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_30dp"
+                android:layout_marginLeft="@dimen/_30dp"
+                android:layout_marginTop="@dimen/_10dp"
+                android:button="@drawable/custom_filter_checkbox"
+                android:padding="@dimen/_6dp"
+                android:text="@string/cancel"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toEndOf="@id/daysCL"
+                app:layout_constraintTop_toBottomOf="@id/notConfirmed">
+
+            </androidx.appcompat.widget.AppCompatCheckBox>
+
+            <androidx.appcompat.widget.AppCompatCheckBox
+                android:id="@+id/all"
+                style="@style/Text_regular_14sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_30dp"
+                android:layout_marginLeft="@dimen/_30dp"
+                android:layout_marginTop="@dimen/_10dp"
+                android:button="@drawable/custom_filter_checkbox"
+                android:padding="@dimen/_6dp"
+                android:text="@string/all"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toEndOf="@id/daysCL"
+                app:layout_constraintTop_toBottomOf="@id/cancel">
+
+            </androidx.appcompat.widget.AppCompatCheckBox>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/bottomView"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_110dp"
+            android:background="@drawable/bg_white_rounded_bottom_sheet"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/clearFilter"
+                style="@style/ButtonGradientStyle"
+                android:layout_marginStart="@dimen/_16dp"
+                android:layout_marginLeft="@dimen/_16dp"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:layout_marginEnd="@dimen/_8dp"
+                android:layout_marginRight="@dimen/_8dp"
+                android:layout_marginBottom="@dimen/_16dp"
+                android:background="@drawable/bg_rectangular_white_4dp"
+                android:onClick="@{(v)->filterViewModel.onClick(v)}"
+                android:text="@string/clear_filter"
+                android:textColor="@color/color_b2b2b2"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/applyFilter"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/applyFilter"
+                style="@style/ButtonGradientStyle"
+                android:layout_marginStart="@dimen/_8dp"
+                android:layout_marginLeft="@dimen/_8dp"
+                android:layout_marginEnd="@dimen/_16dp"
+                android:layout_marginRight="@dimen/_16dp"
+                android:onClick="@{(v)->filterViewModel.onClick(v)}"
+                android:text="@string/apply_filter"
+                app:layout_constraintBottom_toBottomOf="@id/clearFilter"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/clearFilter"
+                app:layout_constraintTop_toTopOf="@id/clearFilter" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
